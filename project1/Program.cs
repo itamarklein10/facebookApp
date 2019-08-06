@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using FacebookWrapper;
 
 namespace project1
 {
@@ -13,6 +14,8 @@ namespace project1
         [STAThread]
         private static void Main()
         {
+            Clipboard.SetText("designpatterns");
+            FacebookService.s_UseForamttedToStrings = true;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

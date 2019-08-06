@@ -177,7 +177,7 @@
             // 
             this.FriendPicture.Location = new System.Drawing.Point(145, 320);
             this.FriendPicture.Name = "FriendPicture";
-            this.FriendPicture.Size = new System.Drawing.Size(81, 77);
+            this.FriendPicture.Size = new System.Drawing.Size(81, 95);
             this.FriendPicture.TabIndex = 16;
             this.FriendPicture.TabStop = false;
             // 
@@ -204,7 +204,7 @@
             // 
             this.PagePictureBox.Location = new System.Drawing.Point(385, 320);
             this.PagePictureBox.Name = "PagePictureBox";
-            this.PagePictureBox.Size = new System.Drawing.Size(81, 77);
+            this.PagePictureBox.Size = new System.Drawing.Size(81, 95);
             this.PagePictureBox.TabIndex = 20;
             this.PagePictureBox.TabStop = false;
             // 
@@ -227,7 +227,6 @@
             this.singleFriendButton.Name = "singleFriendButton";
             this.singleFriendButton.Size = new System.Drawing.Size(91, 17);
             this.singleFriendButton.TabIndex = 23;
-            this.singleFriendButton.TabStop = true;
             this.singleFriendButton.Text = "Single Friends";
             this.singleFriendButton.UseVisualStyleBackColor = true;
             this.singleFriendButton.CheckedChanged += new System.EventHandler(this.RadioButton2_CheckedChanged);
@@ -260,7 +259,6 @@
             this.maleButton.Name = "maleButton";
             this.maleButton.Size = new System.Drawing.Size(48, 17);
             this.maleButton.TabIndex = 24;
-            this.maleButton.TabStop = true;
             this.maleButton.Text = "Male";
             this.maleButton.UseVisualStyleBackColor = true;
             this.maleButton.CheckedChanged += new System.EventHandler(this.MaleButton_CheckedChanged);

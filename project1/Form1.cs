@@ -173,6 +173,11 @@ namespace project1
             {
                 MessageBox.Show("No friends to retrieve ");
             }
+            if(BirthdaysListBox.Items.Count==0)
+            {
+                MessageBox.Show("No friends have birthday today");
+            }
+            
         }
 
         private void EventsListBox_SelectedIndexChanged(object sender, EventArgs e)
