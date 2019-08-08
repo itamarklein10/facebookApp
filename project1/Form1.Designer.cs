@@ -63,19 +63,21 @@
             // 
             // LoginButton
             // 
-            this.LoginButton.Location = new System.Drawing.Point(38, 12);
+            this.LoginButton.Location = new System.Drawing.Point(57, 18);
+            this.LoginButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(75, 23);
+            this.LoginButton.Size = new System.Drawing.Size(112, 35);
             this.LoginButton.TabIndex = 0;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseVisualStyleBackColor = true;
-            this.LoginButton.Click += new System.EventHandler(this.Button1_Click);
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // FriendsButton
             // 
-            this.FriendsButton.Location = new System.Drawing.Point(38, 252);
+            this.FriendsButton.Location = new System.Drawing.Point(57, 388);
+            this.FriendsButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FriendsButton.Name = "FriendsButton";
-            this.FriendsButton.Size = new System.Drawing.Size(75, 23);
+            this.FriendsButton.Size = new System.Drawing.Size(112, 35);
             this.FriendsButton.TabIndex = 3;
             this.FriendsButton.Text = "Friends\r\n";
             this.FriendsButton.UseVisualStyleBackColor = true;
@@ -83,9 +85,10 @@
             // 
             // PageButton
             // 
-            this.PageButton.Location = new System.Drawing.Point(268, 251);
+            this.PageButton.Location = new System.Drawing.Point(402, 386);
+            this.PageButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PageButton.Name = "PageButton";
-            this.PageButton.Size = new System.Drawing.Size(75, 23);
+            this.PageButton.Size = new System.Drawing.Size(112, 35);
             this.PageButton.TabIndex = 4;
             this.PageButton.Text = "Pages";
             this.PageButton.UseVisualStyleBackColor = true;
@@ -93,9 +96,10 @@
             // 
             // BirthdayButton
             // 
-            this.BirthdayButton.Location = new System.Drawing.Point(520, 12);
+            this.BirthdayButton.Location = new System.Drawing.Point(780, 18);
+            this.BirthdayButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BirthdayButton.Name = "BirthdayButton";
-            this.BirthdayButton.Size = new System.Drawing.Size(99, 23);
+            this.BirthdayButton.Size = new System.Drawing.Size(148, 35);
             this.BirthdayButton.TabIndex = 6;
             this.BirthdayButton.Text = "Today\'s Birthdays";
             this.BirthdayButton.UseVisualStyleBackColor = true;
@@ -104,35 +108,42 @@
             // FriendsListBox
             // 
             this.FriendsListBox.FormattingEnabled = true;
-            this.FriendsListBox.Location = new System.Drawing.Point(21, 281);
+            this.FriendsListBox.ItemHeight = 20;
+            this.FriendsListBox.Location = new System.Drawing.Point(32, 432);
+            this.FriendsListBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FriendsListBox.Name = "FriendsListBox";
-            this.FriendsListBox.Size = new System.Drawing.Size(118, 173);
+            this.FriendsListBox.Size = new System.Drawing.Size(175, 264);
             this.FriendsListBox.TabIndex = 8;
             this.FriendsListBox.SelectedIndexChanged += new System.EventHandler(this.FriendsListBox_SelectedIndexChanged);
             // 
             // PagesListBox
             // 
             this.PagesListBox.FormattingEnabled = true;
-            this.PagesListBox.Location = new System.Drawing.Point(246, 281);
+            this.PagesListBox.ItemHeight = 20;
+            this.PagesListBox.Location = new System.Drawing.Point(369, 432);
+            this.PagesListBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PagesListBox.Name = "PagesListBox";
-            this.PagesListBox.Size = new System.Drawing.Size(131, 173);
+            this.PagesListBox.Size = new System.Drawing.Size(194, 264);
             this.PagesListBox.TabIndex = 9;
             this.PagesListBox.SelectedIndexChanged += new System.EventHandler(this.PagesListBox_SelectedIndexChanged);
             // 
             // BirthdaysListBox
             // 
             this.BirthdaysListBox.FormattingEnabled = true;
-            this.BirthdaysListBox.Location = new System.Drawing.Point(513, 41);
+            this.BirthdaysListBox.ItemHeight = 20;
+            this.BirthdaysListBox.Location = new System.Drawing.Point(770, 63);
+            this.BirthdaysListBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BirthdaysListBox.Name = "BirthdaysListBox";
-            this.BirthdaysListBox.Size = new System.Drawing.Size(132, 160);
+            this.BirthdaysListBox.Size = new System.Drawing.Size(196, 244);
             this.BirthdaysListBox.TabIndex = 10;
             this.BirthdaysListBox.SelectedIndexChanged += new System.EventHandler(this.BirthdaysListBox_SelectedIndexChanged);
             // 
             // EventsButton
             // 
-            this.EventsButton.Location = new System.Drawing.Point(542, 251);
+            this.EventsButton.Location = new System.Drawing.Point(813, 386);
+            this.EventsButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.EventsButton.Name = "EventsButton";
-            this.EventsButton.Size = new System.Drawing.Size(75, 23);
+            this.EventsButton.Size = new System.Drawing.Size(112, 35);
             this.EventsButton.TabIndex = 11;
             this.EventsButton.Text = "Events";
             this.EventsButton.UseVisualStyleBackColor = true;
@@ -141,17 +152,20 @@
             // EventsListBox
             // 
             this.EventsListBox.FormattingEnabled = true;
-            this.EventsListBox.Location = new System.Drawing.Point(520, 281);
+            this.EventsListBox.ItemHeight = 20;
+            this.EventsListBox.Location = new System.Drawing.Point(780, 432);
+            this.EventsListBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.EventsListBox.Name = "EventsListBox";
-            this.EventsListBox.Size = new System.Drawing.Size(125, 173);
+            this.EventsListBox.Size = new System.Drawing.Size(186, 264);
             this.EventsListBox.TabIndex = 12;
             this.EventsListBox.SelectedIndexChanged += new System.EventHandler(this.EventsListBox_SelectedIndexChanged);
             // 
             // ProfilePicture
             // 
-            this.ProfilePicture.Location = new System.Drawing.Point(22, 60);
+            this.ProfilePicture.Location = new System.Drawing.Point(33, 92);
+            this.ProfilePicture.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ProfilePicture.Name = "ProfilePicture";
-            this.ProfilePicture.Size = new System.Drawing.Size(117, 120);
+            this.ProfilePicture.Size = new System.Drawing.Size(176, 185);
             this.ProfilePicture.TabIndex = 13;
             this.ProfilePicture.TabStop = false;
             this.ProfilePicture.Click += new System.EventHandler(this.ProfilePicture_Click);
@@ -159,33 +173,38 @@
             // friendsByStatusListBox
             // 
             this.friendsByStatusListBox.FormattingEnabled = true;
-            this.friendsByStatusListBox.Location = new System.Drawing.Point(722, 281);
+            this.friendsByStatusListBox.ItemHeight = 20;
+            this.friendsByStatusListBox.Location = new System.Drawing.Point(1083, 432);
+            this.friendsByStatusListBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.friendsByStatusListBox.Name = "friendsByStatusListBox";
-            this.friendsByStatusListBox.Size = new System.Drawing.Size(120, 173);
+            this.friendsByStatusListBox.Size = new System.Drawing.Size(178, 264);
             this.friendsByStatusListBox.TabIndex = 14;
             this.friendsByStatusListBox.SelectedIndexChanged += new System.EventHandler(this.PhotosListBox_SelectedIndexChanged);
             // 
             // StatusTextBox
             // 
-            this.StatusTextBox.Location = new System.Drawing.Point(246, 98);
+            this.StatusTextBox.Location = new System.Drawing.Point(369, 151);
+            this.StatusTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.StatusTextBox.Name = "StatusTextBox";
-            this.StatusTextBox.Size = new System.Drawing.Size(165, 20);
+            this.StatusTextBox.Size = new System.Drawing.Size(246, 26);
             this.StatusTextBox.TabIndex = 15;
             this.StatusTextBox.TextChanged += new System.EventHandler(this.StatusTextBox_TextChanged);
             // 
             // FriendPicture
             // 
-            this.FriendPicture.Location = new System.Drawing.Point(145, 320);
+            this.FriendPicture.Location = new System.Drawing.Point(218, 492);
+            this.FriendPicture.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FriendPicture.Name = "FriendPicture";
-            this.FriendPicture.Size = new System.Drawing.Size(81, 95);
+            this.FriendPicture.Size = new System.Drawing.Size(122, 146);
             this.FriendPicture.TabIndex = 16;
             this.FriendPicture.TabStop = false;
             // 
             // StatusButton
             // 
-            this.StatusButton.Location = new System.Drawing.Point(165, 96);
+            this.StatusButton.Location = new System.Drawing.Point(248, 148);
+            this.StatusButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.StatusButton.Name = "StatusButton";
-            this.StatusButton.Size = new System.Drawing.Size(75, 23);
+            this.StatusButton.Size = new System.Drawing.Size(112, 35);
             this.StatusButton.TabIndex = 17;
             this.StatusButton.Text = "Post Status";
             this.StatusButton.UseVisualStyleBackColor = true;
@@ -193,27 +212,30 @@
             // 
             // friendByStatusPictureBox
             // 
-            this.friendByStatusPictureBox.Location = new System.Drawing.Point(848, 303);
+            this.friendByStatusPictureBox.Location = new System.Drawing.Point(1272, 466);
+            this.friendByStatusPictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.friendByStatusPictureBox.Name = "friendByStatusPictureBox";
-            this.friendByStatusPictureBox.Size = new System.Drawing.Size(113, 112);
+            this.friendByStatusPictureBox.Size = new System.Drawing.Size(170, 172);
             this.friendByStatusPictureBox.TabIndex = 18;
             this.friendByStatusPictureBox.TabStop = false;
             this.friendByStatusPictureBox.Click += new System.EventHandler(this.FriendByStatus_Click);
             // 
             // PagePictureBox
             // 
-            this.PagePictureBox.Location = new System.Drawing.Point(385, 320);
+            this.PagePictureBox.Location = new System.Drawing.Point(578, 492);
+            this.PagePictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PagePictureBox.Name = "PagePictureBox";
-            this.PagePictureBox.Size = new System.Drawing.Size(81, 95);
+            this.PagePictureBox.Size = new System.Drawing.Size(122, 146);
             this.PagePictureBox.TabIndex = 20;
             this.PagePictureBox.TabStop = false;
             // 
             // MarriedFriendsButton
             // 
             this.MarriedFriendsButton.AutoSize = true;
-            this.MarriedFriendsButton.Location = new System.Drawing.Point(3, 35);
+            this.MarriedFriendsButton.Location = new System.Drawing.Point(4, 54);
+            this.MarriedFriendsButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MarriedFriendsButton.Name = "MarriedFriendsButton";
-            this.MarriedFriendsButton.Size = new System.Drawing.Size(97, 17);
+            this.MarriedFriendsButton.Size = new System.Drawing.Size(144, 24);
             this.MarriedFriendsButton.TabIndex = 22;
             this.MarriedFriendsButton.Text = "Married Friends";
             this.MarriedFriendsButton.UseVisualStyleBackColor = true;
@@ -223,10 +245,12 @@
             // 
             this.singleFriendButton.AutoSize = true;
             this.singleFriendButton.Checked = true;
-            this.singleFriendButton.Location = new System.Drawing.Point(3, 12);
+            this.singleFriendButton.Location = new System.Drawing.Point(4, 18);
+            this.singleFriendButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.singleFriendButton.Name = "singleFriendButton";
-            this.singleFriendButton.Size = new System.Drawing.Size(91, 17);
+            this.singleFriendButton.Size = new System.Drawing.Size(135, 24);
             this.singleFriendButton.TabIndex = 23;
+            this.singleFriendButton.TabStop = true;
             this.singleFriendButton.Text = "Single Friends";
             this.singleFriendButton.UseVisualStyleBackColor = true;
             this.singleFriendButton.CheckedChanged += new System.EventHandler(this.RadioButton2_CheckedChanged);
@@ -234,9 +258,12 @@
             // showFriendByStatusLinkedLabel
             // 
             this.showFriendByStatusLinkedLabel.AutoSize = true;
-            this.showFriendByStatusLinkedLabel.Location = new System.Drawing.Point(718, 185);
+            this.showFriendByStatusLinkedLabel.BackColor = System.Drawing.Color.LightCyan;
+            this.showFriendByStatusLinkedLabel.LinkColor = System.Drawing.Color.Navy;
+            this.showFriendByStatusLinkedLabel.Location = new System.Drawing.Point(1077, 285);
+            this.showFriendByStatusLinkedLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.showFriendByStatusLinkedLabel.Name = "showFriendByStatusLinkedLabel";
-            this.showFriendByStatusLinkedLabel.Size = new System.Drawing.Size(113, 13);
+            this.showFriendByStatusLinkedLabel.Size = new System.Drawing.Size(169, 20);
             this.showFriendByStatusLinkedLabel.TabIndex = 26;
             this.showFriendByStatusLinkedLabel.TabStop = true;
             this.showFriendByStatusLinkedLabel.Text = "Show friends by status";
@@ -246,19 +273,22 @@
             // 
             this.panel1.Controls.Add(this.singleFriendButton);
             this.panel1.Controls.Add(this.MarriedFriendsButton);
-            this.panel1.Location = new System.Drawing.Point(722, 221);
+            this.panel1.Location = new System.Drawing.Point(1083, 340);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(109, 54);
+            this.panel1.Size = new System.Drawing.Size(164, 83);
             this.panel1.TabIndex = 24;
             // 
             // maleButton
             // 
             this.maleButton.AutoSize = true;
             this.maleButton.Checked = true;
-            this.maleButton.Location = new System.Drawing.Point(722, 201);
+            this.maleButton.Location = new System.Drawing.Point(1083, 309);
+            this.maleButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.maleButton.Name = "maleButton";
-            this.maleButton.Size = new System.Drawing.Size(48, 17);
+            this.maleButton.Size = new System.Drawing.Size(68, 24);
             this.maleButton.TabIndex = 24;
+            this.maleButton.TabStop = true;
             this.maleButton.Text = "Male";
             this.maleButton.UseVisualStyleBackColor = true;
             this.maleButton.CheckedChanged += new System.EventHandler(this.MaleButton_CheckedChanged);
@@ -266,9 +296,10 @@
             // femaleButton
             // 
             this.femaleButton.AutoSize = true;
-            this.femaleButton.Location = new System.Drawing.Point(772, 201);
+            this.femaleButton.Location = new System.Drawing.Point(1158, 309);
+            this.femaleButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.femaleButton.Name = "femaleButton";
-            this.femaleButton.Size = new System.Drawing.Size(59, 17);
+            this.femaleButton.Size = new System.Drawing.Size(87, 24);
             this.femaleButton.TabIndex = 27;
             this.femaleButton.Text = "Female";
             this.femaleButton.UseVisualStyleBackColor = true;
@@ -277,18 +308,20 @@
             // facebookLogoPictureBox
             // 
             this.facebookLogoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("facebookLogoPictureBox.Image")));
-            this.facebookLogoPictureBox.Location = new System.Drawing.Point(708, 12);
+            this.facebookLogoPictureBox.Location = new System.Drawing.Point(1062, 18);
+            this.facebookLogoPictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.facebookLogoPictureBox.Name = "facebookLogoPictureBox";
-            this.facebookLogoPictureBox.Size = new System.Drawing.Size(262, 92);
+            this.facebookLogoPictureBox.Size = new System.Drawing.Size(393, 142);
             this.facebookLogoPictureBox.TabIndex = 29;
             this.facebookLogoPictureBox.TabStop = false;
             this.facebookLogoPictureBox.Click += new System.EventHandler(this.FacebookLogoPictureBox_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 475);
+            this.BackColor = System.Drawing.Color.LightCyan;
+            this.ClientSize = new System.Drawing.Size(1317, 731);
             this.Controls.Add(this.facebookLogoPictureBox);
             this.Controls.Add(this.femaleButton);
             this.Controls.Add(this.maleButton);
@@ -311,6 +344,7 @@
             this.Controls.Add(this.FriendsButton);
             this.Controls.Add(this.LoginButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";

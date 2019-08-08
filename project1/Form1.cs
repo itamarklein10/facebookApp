@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
+
 
 namespace project1
 {
@@ -19,7 +15,7 @@ namespace project1
             InitializeComponent();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void LoginButton_Click(object sender, EventArgs e)
         {
             LoginUser();
         }
@@ -173,11 +169,11 @@ namespace project1
             {
                 MessageBox.Show("No friends to retrieve ");
             }
-            if(BirthdaysListBox.Items.Count==0)
+            if (BirthdaysListBox.Items.Count == 0)
             {
                 MessageBox.Show("No friends have birthday today");
             }
-            
+
         }
 
         private void EventsListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -250,6 +246,11 @@ namespace project1
         }
 
         private void ShowFriendByStatusLinkedLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DisplayFriendByStatusAndGender();
+        }
+
+        private void DisplayFriendByStatusAndGender()
         {
             friendsByStatusListBox.Items.Clear();
             friendsByStatusListBox.DisplayMember = "Name";
