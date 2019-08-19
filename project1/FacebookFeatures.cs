@@ -33,6 +33,7 @@ namespace project1
             {
                 foreach (Event facebookEvent in i_LoggedInUser.Events)
                 {
+                    
                     i_FacebookForm.EventsListBox.Items.Add(facebookEvent);
                 }
 
@@ -125,45 +126,52 @@ namespace project1
             i_FacebookForm.FriendsByStatusListBox.Items.Clear();
             i_FacebookForm.FriendsByStatusListBox.DisplayMember = "Name";
 
-            bool isMale = i_FacebookForm.MaleButton.Checked == true;
-            bool isMarried = i_FacebookForm.MarriedFriendsButton.Checked == true;
-            bool isSingle = i_FacebookForm.SingleFriendButton.Checked == true;
+            bool isMale = i_FacebookForm.maleButton.Checked == true;
+            bool isMarried = i_FacebookForm.marriedFriendsButton.Checked == true;
+            bool isSingle = i_FacebookForm.singleFriendButton.Checked == true;
             User.eRelationshipStatus e_UserStatus;
             User.eGender e_UserGender;
-
-            foreach (User friend in i_LoggedInUser.Friends)
+            try
             {
-                e_UserGender = (User.eGender)friend.Gender;
-                e_UserStatus = (User.eRelationshipStatus)friend.RelationshipStatus;
-
-                bool checkIfAddToTheList =
-                    (isMale && isSingle && e_UserGender == User.eGender.male && e_UserStatus == User.eRelationshipStatus.Single) ||
-                    (isMale && isMarried && e_UserGender == User.eGender.male && e_UserStatus == User.eRelationshipStatus.Married) ||
-                    (!isMale && isSingle && e_UserGender == User.eGender.female && e_UserStatus == User.eRelationshipStatus.Single) ||
-                    (!isMale && isMarried && e_UserGender == User.eGender.female && e_UserStatus == User.eRelationshipStatus.Married);
-
-                if (checkIfAddToTheList)
+                foreach (User friend in i_LoggedInUser.Friends)
                 {
-                    if (i_FacebookForm.FriendsByStatusListBox.Items.Count>0)
+                    e_UserGender = (User.eGender)friend.Gender;
+                    e_UserStatus = (User.eRelationshipStatus)friend.RelationshipStatus;
+
+                    bool checkIfAddToTheList =
+                        (isMale && isSingle && e_UserGender == User.eGender.male && e_UserStatus == User.eRelationshipStatus.Single) ||
+                        (isMale && isMarried && e_UserGender == User.eGender.male && e_UserStatus == User.eRelationshipStatus.Married) ||
+                        (!isMale && isSingle && e_UserGender == User.eGender.female && e_UserStatus == User.eRelationshipStatus.Single) ||
+                        (!isMale && isMarried && e_UserGender == User.eGender.female && e_UserStatus == User.eRelationshipStatus.Married);
+
+                    if (checkIfAddToTheList)
                     {
-                        UserPrototype friendPrototype = (UserPrototype)i_FacebookForm.FriendsByStatusListBox.Items[0];
-                        UserPrototype newUserPrototype = friendPrototype.ShalowClone();
-                        newUserPrototype.m_Name = friend.Name;
-                        newUserPrototype.PictureNormalURL = friend.PictureNormalURL;
-                        i_FacebookForm.FriendsByStatusListBox.Items.Add(newUserPrototype);
+                        if (i_FacebookForm.FriendsByStatusListBox.Items.Count > 0)
+                        {
+                            UserPrototype friendPrototype = (UserPrototype)i_FacebookForm.FriendsByStatusListBox.Items[0];
+                            UserPrototype newUserPrototype = friendPrototype.ShalowClone();
+                            newUserPrototype.m_Name = friend.Name;
+                            newUserPrototype.PictureNormalURL = friend.PictureNormalURL;
+                            i_FacebookForm.FriendsByStatusListBox.Items.Add(newUserPrototype);
+                        }
+                        else
+                        {//first user add to the list box
+                            UserPrototype firstUserPrototype = new UserPrototype();
+                            firstUserPrototype.m_Name = friend.Name;
+                            firstUserPrototype.e_Gender = (eGender)friend.Gender;
+                            firstUserPrototype.e_UserStatus = (eRelationshipStatus)friend.RelationshipStatus;
+                            firstUserPrototype.PictureNormalURL = friend.PictureNormalURL;
+                            i_FacebookForm.FriendsByStatusListBox.Items.Add(firstUserPrototype);
+                        }
+                        i_FacebookForm.FriendsByStatusListBox.Items.Add(friend);
+                        friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
                     }
-                    else
-                    {//first user add to the list box
-                        UserPrototype firstUserPrototype = new UserPrototype();
-                        firstUserPrototype.m_Name= friend.Name;
-                        firstUserPrototype.e_Gender = (eGender)friend.Gender;
-                        firstUserPrototype.e_UserStatus = (eRelationshipStatus)friend.RelationshipStatus;
-                        firstUserPrototype.PictureNormalURL = friend.PictureNormalURL;
-                        i_FacebookForm.FriendsByStatusListBox.Items.Add(firstUserPrototype);
-                    }
-                    i_FacebookForm.FriendsByStatusListBox.Items.Add(friend);
-                    friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
+
                 }
+            }
+            catch (InvalidOperationException)
+            {
+                MessageBox.Show("feature unavailable because of facebook");
             }
 
             if (i_LoggedInUser.Friends.Count == 0)

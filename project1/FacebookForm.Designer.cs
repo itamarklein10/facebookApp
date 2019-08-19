@@ -33,32 +33,33 @@ namespace project1
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacebookForm));
-            this.LoginButton = new System.Windows.Forms.Button();
+            this.loginButton = new System.Windows.Forms.Button();
             this.FriendsButton = new System.Windows.Forms.Button();
-            this.PageButton = new System.Windows.Forms.Button();
-            this.BirthdayButton = new System.Windows.Forms.Button();
+            this.pageButton = new System.Windows.Forms.Button();
+            this.birthdayButton = new System.Windows.Forms.Button();
             this.FriendsListBox = new System.Windows.Forms.ListBox();
             this.PagesListBox = new System.Windows.Forms.ListBox();
             this.BirthdaysListBox = new System.Windows.Forms.ListBox();
-            this.EventsButton = new System.Windows.Forms.Button();
+            this.eventsButton = new System.Windows.Forms.Button();
             this.EventsListBox = new System.Windows.Forms.ListBox();
             this.ProfilePicture = new System.Windows.Forms.PictureBox();
             this.FriendsByStatusListBox = new System.Windows.Forms.ListBox();
             this.StatusTextBox = new System.Windows.Forms.TextBox();
             this.FriendPicture = new System.Windows.Forms.PictureBox();
-            this.StatusButton = new System.Windows.Forms.Button();
+            this.statusButton = new System.Windows.Forms.Button();
             this.FriendByStatusPictureBox = new System.Windows.Forms.PictureBox();
             this.PagePictureBox = new System.Windows.Forms.PictureBox();
-            this.MarriedFriendsButton = new System.Windows.Forms.RadioButton();
-            this.SingleFriendButton = new System.Windows.Forms.RadioButton();
-            this.ShowFriendByStatusLinkedLabel = new System.Windows.Forms.LinkLabel();
+            this.marriedFriendsButton = new System.Windows.Forms.RadioButton();
+            this.singleFriendButton = new System.Windows.Forms.RadioButton();
+            this.showFriendByStatusLinkedLabel = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.MaleButton = new System.Windows.Forms.RadioButton();
-            this.FemaleButton = new System.Windows.Forms.RadioButton();
+            this.maleButton = new System.Windows.Forms.RadioButton();
+            this.femaleButton = new System.Windows.Forms.RadioButton();
             this.FacebookLogoPictureBox = new System.Windows.Forms.PictureBox();
             this.rememberMeButton = new System.Windows.Forms.CheckBox();
             this.fetchEverythingCheckBox = new System.Windows.Forms.CheckBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.declineButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FriendPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FriendByStatusPictureBox)).BeginInit();
@@ -70,16 +71,17 @@ namespace project1
             // 
             // LoginButton
             // 
-            this.LoginButton.Location = new System.Drawing.Point(38, 12);
-            this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(75, 23);
-            this.LoginButton.TabIndex = 0;
-            this.LoginButton.Text = "Login";
-            this.LoginButton.UseVisualStyleBackColor = true;
-            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
+            this.loginButton.Location = new System.Drawing.Point(38, 12);
+            this.loginButton.Name = "LoginButton";
+            this.loginButton.Size = new System.Drawing.Size(75, 23);
+            this.loginButton.TabIndex = 0;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // FriendsButton
             // 
+            this.FriendsButton.Enabled = false;
             this.FriendsButton.Location = new System.Drawing.Point(38, 252);
             this.FriendsButton.Name = "FriendsButton";
             this.FriendsButton.Size = new System.Drawing.Size(75, 23);
@@ -90,23 +92,25 @@ namespace project1
             // 
             // PageButton
             // 
-            this.PageButton.Location = new System.Drawing.Point(268, 251);
-            this.PageButton.Name = "PageButton";
-            this.PageButton.Size = new System.Drawing.Size(75, 23);
-            this.PageButton.TabIndex = 4;
-            this.PageButton.Text = "Pages";
-            this.PageButton.UseVisualStyleBackColor = true;
-            this.PageButton.Click += new System.EventHandler(this.PageButton_Clicked);
+            this.pageButton.Enabled = false;
+            this.pageButton.Location = new System.Drawing.Point(268, 251);
+            this.pageButton.Name = "PageButton";
+            this.pageButton.Size = new System.Drawing.Size(75, 23);
+            this.pageButton.TabIndex = 4;
+            this.pageButton.Text = "Pages";
+            this.pageButton.UseVisualStyleBackColor = true;
+            this.pageButton.Click += new System.EventHandler(this.PageButton_Clicked);
             // 
             // BirthdayButton
             // 
-            this.BirthdayButton.Location = new System.Drawing.Point(520, 12);
-            this.BirthdayButton.Name = "BirthdayButton";
-            this.BirthdayButton.Size = new System.Drawing.Size(99, 23);
-            this.BirthdayButton.TabIndex = 6;
-            this.BirthdayButton.Text = "Today\'s Birthdays";
-            this.BirthdayButton.UseVisualStyleBackColor = true;
-            this.BirthdayButton.Click += new System.EventHandler(this.BirthdayButton_Click);
+            this.birthdayButton.Enabled = false;
+            this.birthdayButton.Location = new System.Drawing.Point(520, 12);
+            this.birthdayButton.Name = "BirthdayButton";
+            this.birthdayButton.Size = new System.Drawing.Size(99, 23);
+            this.birthdayButton.TabIndex = 6;
+            this.birthdayButton.Text = "Today\'s Birthdays";
+            this.birthdayButton.UseVisualStyleBackColor = true;
+            this.birthdayButton.Click += new System.EventHandler(this.BirthdayButton_Click);
             // 
             // FriendsListBox
             // 
@@ -137,18 +141,19 @@ namespace project1
             // 
             // EventsButton
             // 
-            this.EventsButton.Location = new System.Drawing.Point(542, 251);
-            this.EventsButton.Name = "EventsButton";
-            this.EventsButton.Size = new System.Drawing.Size(75, 23);
-            this.EventsButton.TabIndex = 11;
-            this.EventsButton.Text = "Events";
-            this.EventsButton.UseVisualStyleBackColor = true;
-            this.EventsButton.Click += new System.EventHandler(this.EventsButton_Click);
+            this.eventsButton.Enabled = false;
+            this.eventsButton.Location = new System.Drawing.Point(513, 250);
+            this.eventsButton.Name = "EventsButton";
+            this.eventsButton.Size = new System.Drawing.Size(75, 23);
+            this.eventsButton.TabIndex = 11;
+            this.eventsButton.Text = "Events";
+            this.eventsButton.UseVisualStyleBackColor = true;
+            this.eventsButton.Click += new System.EventHandler(this.EventsButton_Click);
             // 
             // EventsListBox
             // 
             this.EventsListBox.FormattingEnabled = true;
-            this.EventsListBox.Location = new System.Drawing.Point(520, 281);
+            this.EventsListBox.Location = new System.Drawing.Point(494, 281);
             this.EventsListBox.Name = "EventsListBox";
             this.EventsListBox.Size = new System.Drawing.Size(125, 173);
             this.EventsListBox.TabIndex = 12;
@@ -191,13 +196,14 @@ namespace project1
             // 
             // StatusButton
             // 
-            this.StatusButton.Location = new System.Drawing.Point(165, 96);
-            this.StatusButton.Name = "StatusButton";
-            this.StatusButton.Size = new System.Drawing.Size(75, 23);
-            this.StatusButton.TabIndex = 17;
-            this.StatusButton.Text = "Post Status";
-            this.StatusButton.UseVisualStyleBackColor = true;
-            this.StatusButton.Click += new System.EventHandler(this.StatusButton_Click);
+            this.statusButton.Enabled = false;
+            this.statusButton.Location = new System.Drawing.Point(165, 96);
+            this.statusButton.Name = "StatusButton";
+            this.statusButton.Size = new System.Drawing.Size(75, 23);
+            this.statusButton.TabIndex = 17;
+            this.statusButton.Text = "Post Status";
+            this.statusButton.UseVisualStyleBackColor = true;
+            this.statusButton.Click += new System.EventHandler(this.StatusButton_Click);
             // 
             // FriendByStatusPictureBox
             // 
@@ -218,45 +224,48 @@ namespace project1
             // 
             // MarriedFriendsButton
             // 
-            this.MarriedFriendsButton.AutoSize = true;
-            this.MarriedFriendsButton.Location = new System.Drawing.Point(3, 35);
-            this.MarriedFriendsButton.Name = "MarriedFriendsButton";
-            this.MarriedFriendsButton.Size = new System.Drawing.Size(97, 17);
-            this.MarriedFriendsButton.TabIndex = 22;
-            this.MarriedFriendsButton.Text = "Married Friends";
-            this.MarriedFriendsButton.UseVisualStyleBackColor = true;
-            this.MarriedFriendsButton.CheckedChanged += new System.EventHandler(this.MarriedFriendsButton_CheckedChanged);
+            this.marriedFriendsButton.AutoSize = true;
+            this.marriedFriendsButton.Enabled = false;
+            this.marriedFriendsButton.Location = new System.Drawing.Point(3, 35);
+            this.marriedFriendsButton.Name = "MarriedFriendsButton";
+            this.marriedFriendsButton.Size = new System.Drawing.Size(97, 17);
+            this.marriedFriendsButton.TabIndex = 22;
+            this.marriedFriendsButton.Text = "Married Friends";
+            this.marriedFriendsButton.UseVisualStyleBackColor = true;
+            this.marriedFriendsButton.CheckedChanged += new System.EventHandler(this.MarriedFriendsButton_CheckedChanged);
             // 
             // SingleFriendButton
             // 
-            this.SingleFriendButton.AutoSize = true;
-            this.SingleFriendButton.Checked = true;
-            this.SingleFriendButton.Location = new System.Drawing.Point(3, 12);
-            this.SingleFriendButton.Name = "SingleFriendButton";
-            this.SingleFriendButton.Size = new System.Drawing.Size(91, 17);
-            this.SingleFriendButton.TabIndex = 23;
-            this.SingleFriendButton.TabStop = true;
-            this.SingleFriendButton.Text = "Single Friends";
-            this.SingleFriendButton.UseVisualStyleBackColor = true;
-            this.SingleFriendButton.CheckedChanged += new System.EventHandler(this.RadioButton2_CheckedChanged);
+            this.singleFriendButton.AutoSize = true;
+            this.singleFriendButton.Checked = true;
+            this.singleFriendButton.Enabled = false;
+            this.singleFriendButton.Location = new System.Drawing.Point(3, 12);
+            this.singleFriendButton.Name = "SingleFriendButton";
+            this.singleFriendButton.Size = new System.Drawing.Size(91, 17);
+            this.singleFriendButton.TabIndex = 23;
+            this.singleFriendButton.TabStop = true;
+            this.singleFriendButton.Text = "Single Friends";
+            this.singleFriendButton.UseVisualStyleBackColor = true;
+            this.singleFriendButton.CheckedChanged += new System.EventHandler(this.RadioButton2_CheckedChanged);
             // 
             // ShowFriendByStatusLinkedLabel
             // 
-            this.ShowFriendByStatusLinkedLabel.AutoSize = true;
-            this.ShowFriendByStatusLinkedLabel.BackColor = System.Drawing.Color.LightCyan;
-            this.ShowFriendByStatusLinkedLabel.LinkColor = System.Drawing.Color.Navy;
-            this.ShowFriendByStatusLinkedLabel.Location = new System.Drawing.Point(718, 185);
-            this.ShowFriendByStatusLinkedLabel.Name = "ShowFriendByStatusLinkedLabel";
-            this.ShowFriendByStatusLinkedLabel.Size = new System.Drawing.Size(113, 13);
-            this.ShowFriendByStatusLinkedLabel.TabIndex = 26;
-            this.ShowFriendByStatusLinkedLabel.TabStop = true;
-            this.ShowFriendByStatusLinkedLabel.Text = "Show friends by status";
-            this.ShowFriendByStatusLinkedLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ShowFriendByStatusLinkedLabel_LinkClicked);
+            this.showFriendByStatusLinkedLabel.AutoSize = true;
+            this.showFriendByStatusLinkedLabel.BackColor = System.Drawing.Color.LightCyan;
+            this.showFriendByStatusLinkedLabel.Enabled = false;
+            this.showFriendByStatusLinkedLabel.LinkColor = System.Drawing.Color.Navy;
+            this.showFriendByStatusLinkedLabel.Location = new System.Drawing.Point(718, 185);
+            this.showFriendByStatusLinkedLabel.Name = "ShowFriendByStatusLinkedLabel";
+            this.showFriendByStatusLinkedLabel.Size = new System.Drawing.Size(113, 13);
+            this.showFriendByStatusLinkedLabel.TabIndex = 26;
+            this.showFriendByStatusLinkedLabel.TabStop = true;
+            this.showFriendByStatusLinkedLabel.Text = "Show friends by status";
+            this.showFriendByStatusLinkedLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ShowFriendByStatusLinkedLabel_LinkClicked);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.SingleFriendButton);
-            this.panel1.Controls.Add(this.MarriedFriendsButton);
+            this.panel1.Controls.Add(this.singleFriendButton);
+            this.panel1.Controls.Add(this.marriedFriendsButton);
             this.panel1.Location = new System.Drawing.Point(722, 221);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(109, 54);
@@ -264,27 +273,29 @@ namespace project1
             // 
             // MaleButton
             // 
-            this.MaleButton.AutoSize = true;
-            this.MaleButton.Checked = true;
-            this.MaleButton.Location = new System.Drawing.Point(722, 201);
-            this.MaleButton.Name = "MaleButton";
-            this.MaleButton.Size = new System.Drawing.Size(48, 17);
-            this.MaleButton.TabIndex = 24;
-            this.MaleButton.TabStop = true;
-            this.MaleButton.Text = "Male";
-            this.MaleButton.UseVisualStyleBackColor = true;
-            this.MaleButton.CheckedChanged += new System.EventHandler(this.MaleButton_CheckedChanged);
+            this.maleButton.AutoSize = true;
+            this.maleButton.Checked = true;
+            this.maleButton.Enabled = false;
+            this.maleButton.Location = new System.Drawing.Point(722, 201);
+            this.maleButton.Name = "MaleButton";
+            this.maleButton.Size = new System.Drawing.Size(48, 17);
+            this.maleButton.TabIndex = 24;
+            this.maleButton.TabStop = true;
+            this.maleButton.Text = "Male";
+            this.maleButton.UseVisualStyleBackColor = true;
+            this.maleButton.CheckedChanged += new System.EventHandler(this.MaleButton_CheckedChanged);
             // 
             // FemaleButton
             // 
-            this.FemaleButton.AutoSize = true;
-            this.FemaleButton.Location = new System.Drawing.Point(772, 201);
-            this.FemaleButton.Name = "FemaleButton";
-            this.FemaleButton.Size = new System.Drawing.Size(59, 17);
-            this.FemaleButton.TabIndex = 27;
-            this.FemaleButton.Text = "Female";
-            this.FemaleButton.UseVisualStyleBackColor = true;
-            this.FemaleButton.CheckedChanged += new System.EventHandler(this.FemaleButton_CheckedChanged);
+            this.femaleButton.AutoSize = true;
+            this.femaleButton.Enabled = false;
+            this.femaleButton.Location = new System.Drawing.Point(772, 201);
+            this.femaleButton.Name = "FemaleButton";
+            this.femaleButton.Size = new System.Drawing.Size(59, 17);
+            this.femaleButton.TabIndex = 27;
+            this.femaleButton.Text = "Female";
+            this.femaleButton.UseVisualStyleBackColor = true;
+            this.femaleButton.CheckedChanged += new System.EventHandler(this.FemaleButton_CheckedChanged);
             // 
             // FacebookLogoPictureBox
             // 
@@ -319,35 +330,48 @@ namespace project1
             this.fetchEverythingCheckBox.UseVisualStyleBackColor = true;
             this.fetchEverythingCheckBox.CheckedChanged += new System.EventHandler(this.FetchEverythingCheckBox_CheckedChanged);
             // 
+            // declineButton
+            // 
+            this.declineButton.Enabled = false;
+            this.declineButton.Location = new System.Drawing.Point(625, 320);
+            this.declineButton.Name = "declineButton";
+            this.declineButton.Size = new System.Drawing.Size(80, 47);
+            this.declineButton.TabIndex = 32;
+            this.declineButton.Text = "Decline and remove event";
+            this.declineButton.UseVisualStyleBackColor = true;
+            this.declineButton.Click += new System.EventHandler(this.RemoveEvent_Click);
+            // 
             // FacebookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(992, 473);
+            this.Controls.Add(this.declineButton);
             this.Controls.Add(this.fetchEverythingCheckBox);
             this.Controls.Add(this.rememberMeButton);
             this.Controls.Add(this.FacebookLogoPictureBox);
-            this.Controls.Add(this.FemaleButton);
-            this.Controls.Add(this.MaleButton);
+            this.Controls.Add(this.femaleButton);
+            this.Controls.Add(this.maleButton);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.ShowFriendByStatusLinkedLabel);
+            this.Controls.Add(this.showFriendByStatusLinkedLabel);
             this.Controls.Add(this.PagePictureBox);
             this.Controls.Add(this.FriendByStatusPictureBox);
-            this.Controls.Add(this.StatusButton);
+            this.Controls.Add(this.statusButton);
             this.Controls.Add(this.FriendPicture);
             this.Controls.Add(this.StatusTextBox);
             this.Controls.Add(this.FriendsByStatusListBox);
             this.Controls.Add(this.ProfilePicture);
             this.Controls.Add(this.EventsListBox);
-            this.Controls.Add(this.EventsButton);
+            this.Controls.Add(this.eventsButton);
             this.Controls.Add(this.BirthdaysListBox);
             this.Controls.Add(this.PagesListBox);
             this.Controls.Add(this.FriendsListBox);
-            this.Controls.Add(this.BirthdayButton);
-            this.Controls.Add(this.PageButton);
+            this.Controls.Add(this.birthdayButton);
+            this.Controls.Add(this.pageButton);
             this.Controls.Add(this.FriendsButton);
-            this.Controls.Add(this.LoginButton);
+            this.Controls.Add(this.loginButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -374,32 +398,33 @@ namespace project1
 
         #endregion
 
-        private System.Windows.Forms.Button LoginButton;
+        private System.Windows.Forms.Button loginButton;
 
         internal System.Windows.Forms.Button FriendsButton;
-        internal System.Windows.Forms.Button PageButton;
-        internal System.Windows.Forms.Button BirthdayButton;
+        internal System.Windows.Forms.Button pageButton;
+        internal System.Windows.Forms.Button birthdayButton;
         internal System.Windows.Forms.ListBox FriendsListBox;
         internal System.Windows.Forms.ListBox PagesListBox;
         internal System.Windows.Forms.ListBox BirthdaysListBox;
-        internal System.Windows.Forms.Button EventsButton;
+        internal System.Windows.Forms.Button eventsButton;
         internal System.Windows.Forms.ListBox EventsListBox;
         internal System.Windows.Forms.PictureBox ProfilePicture;
         internal System.Windows.Forms.ListBox FriendsByStatusListBox;
         internal System.Windows.Forms.TextBox StatusTextBox;
         internal System.Windows.Forms.PictureBox FriendPicture;
-        internal System.Windows.Forms.Button StatusButton;
+        internal System.Windows.Forms.Button statusButton;
         internal System.Windows.Forms.PictureBox FriendByStatusPictureBox;
         internal System.Windows.Forms.PictureBox PagePictureBox;
-        internal System.Windows.Forms.RadioButton MarriedFriendsButton;
-        internal System.Windows.Forms.RadioButton SingleFriendButton;
-        internal System.Windows.Forms.LinkLabel ShowFriendByStatusLinkedLabel;
+        internal System.Windows.Forms.RadioButton marriedFriendsButton;
+        internal System.Windows.Forms.RadioButton singleFriendButton;
+        internal System.Windows.Forms.LinkLabel showFriendByStatusLinkedLabel;
         private System.Windows.Forms.Panel panel1;
-        internal System.Windows.Forms.RadioButton MaleButton;
-        internal System.Windows.Forms.RadioButton FemaleButton;
+        internal System.Windows.Forms.RadioButton maleButton;
+        internal System.Windows.Forms.RadioButton femaleButton;
         internal System.Windows.Forms.PictureBox FacebookLogoPictureBox;
         private System.Windows.Forms.CheckBox rememberMeButton;
         private System.Windows.Forms.CheckBox fetchEverythingCheckBox;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Button declineButton;
     }
 }

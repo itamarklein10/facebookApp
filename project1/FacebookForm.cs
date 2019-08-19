@@ -54,8 +54,17 @@ namespace project1
                 FacebookFeatures.DisplayPages(this, m_LoggedInUser);
                 FacebookFeatures.DisplayTodaysBirthdays(m_LoggedInUser, this);
             }
-            LoginButton.Enabled = false;
-
+            loginButton.Enabled = false;
+            birthdayButton.Enabled = true;
+            FriendsButton.Enabled = true;
+            singleFriendButton.Enabled = true;
+            marriedFriendsButton.Enabled = true;
+            maleButton.Enabled = true;
+            femaleButton.Enabled = true;
+            pageButton.Enabled = true;
+            eventsButton.Enabled = true;
+            statusButton.Enabled = true;
+            showFriendByStatusLinkedLabel.Enabled = true;
         }
 
 
@@ -177,12 +186,20 @@ namespace project1
         private void EventsButton_Click(object sender, EventArgs e)
         {
             FacebookFeatures.DisplayEvents(this, m_LoggedInUser);
+            declineButton.Enabled = true;
         }
 
         private void StatusButton_Click(object sender, EventArgs e)
         {
-            Status postedStatus = m_LoggedInUser.PostStatus(StatusTextBox.Text);
-            MessageBox.Show("Status Posted! ID: " + postedStatus.Id);
+            try
+            {
+                Status postedStatus = m_LoggedInUser.PostStatus(StatusTextBox.Text);
+                MessageBox.Show("Status Posted! ID: " + postedStatus.Id);
+            }
+            catch (Facebook.FacebookOAuthException)
+            {
+                MessageBox.Show("feature unavailable because of facebook");
+            }
         }
 
         private void LikesLabel_Click(object sender, EventArgs e)
@@ -255,6 +272,9 @@ namespace project1
         private void ShowFriendByStatusLinkedLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FacebookFeatures.DisplayFriendByStatusAndGender(this, m_LoggedInUser);
+            maleButton.Checked = true;
+            singleFriendButton.Checked = true;
+
         }
 
         private void GroupBox1_Enter(object sender, EventArgs e)
@@ -290,6 +310,16 @@ namespace project1
         private void FetchEverythingCheckBox_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void RemoveEvent_Click(object sender, EventArgs e)
+        {
+            if (EventsListBox.SelectedItems.Count == 1)
+            {
+                Event selectedEvent = EventsListBox.SelectedItem as Event;
+                selectedEvent.DeclinedUsers.Add(m_LoggedInUser);
+                EventsListBox.SelectedItems.Remove(selectedEvent);
+            }
         }
     }
 }
