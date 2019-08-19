@@ -9,21 +9,7 @@ namespace project1
 {
     public class FacebookFeatures
     {
-        public static void DisplayFriends(FacebookForm i_FacebookForm, User i_LoggedInUser)
-        {
-            i_FacebookForm.FriendsListBox.Items.Clear();
-            i_FacebookForm.FriendsListBox.DisplayMember = "Name";
-            foreach (User friend in i_LoggedInUser.Friends)
-            {
-                i_FacebookForm.FriendsListBox.Items.Add(friend);
-                friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
-            }
-
-            if (i_LoggedInUser.Friends.Count == 0)
-            {
-                MessageBox.Show("No Friends to retrieve");
-            }
-        }
+   
 
         public static void DisplayEvents(FacebookForm i_FacebookForm, User i_LoggedInUser)
         {

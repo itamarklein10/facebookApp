@@ -16,6 +16,31 @@ namespace project1
             InitializeComponent();
         }
 
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            AppSetting.Instance.LastWindowState = this.WindowState;
+            AppSetting.Instance.LastWindowSize = this.Size;
+            AppSetting.Instance.LastWindowLocation = this.Location;
+            AppSetting.Instance.AutoLogin = this.rememberMeButton.Checked;
+            AppSetting.Instance.Save();
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            this.Size = AppSetting.Instance.LastWindowSize;
+            this.WindowState = AppSetting.Instance.LastWindowState;
+            this.Location = AppSetting.Instance.LastWindowLocation;
+            this.rememberMeButton.Checked = AppSetting.Instance.AutoLogin;
+
+            if (AppSetting.Instance.AutoLogin)
+            {
+                new Thread(this.AutoLogin).Start();
+            }
+        }
+
         private void LoginButton_Click(object sender, EventArgs e)
         {
             LoginUser();
@@ -65,15 +90,18 @@ namespace project1
                                 );
             m_LoggedInUser = result.LoggedInUser;
             AppSetting.Instance.AccessToken = result.AccessToken;
-            fetchUserInfo();
+            FetchUserInfo();
         }
 
-        private void fetchUserInfo()
+        private void FetchUserInfo()
         {
             new Thread(() =>
             {
                 var statuses = m_LoggedInUser.Statuses;
-
+                if (m_LoggedInUser.Posts.Count > 0)
+                {
+                    StatusTextBox.Text = m_LoggedInUser.Posts[0].Message;
+                }
                 this.Invoke(new Action(() =>
                 {
                     ProfilePicture.LoadAsync(m_LoggedInUser.PictureNormalURL);
@@ -88,14 +116,14 @@ namespace project1
             set { m_LoggedInUser = value; }
         }
 
-        private void FetchUserInfo()
-        {
-            ProfilePicture.LoadAsync(m_LoggedInUser.PictureNormalURL);
-            if (m_LoggedInUser.Posts.Count > 0)
-            {
-                StatusTextBox.Text = m_LoggedInUser.Posts[0].Message;
-            }
-        }
+        //private void FetchUserInfo()
+        //{
+        //    ProfilePicture.LoadAsync(m_LoggedInUser.PictureNormalURL);
+        //    if (m_LoggedInUser.Posts.Count > 0)
+        //    {
+        //        StatusTextBox.Text = m_LoggedInUser.Posts[0].Message;
+        //    }
+        //}
 
         private void FriendsButton_Clicked(object sender, EventArgs e)
         {
