@@ -6,7 +6,7 @@ using FacebookWrapper;
 
 namespace project1
 {
-    static class Program
+    public static class Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -18,7 +18,7 @@ namespace project1
             FacebookService.s_UseForamttedToStrings = true;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FacebookForm());
         }
     }
 }
