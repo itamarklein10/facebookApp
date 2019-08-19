@@ -31,6 +31,7 @@ namespace project1
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacebookForm));
             this.LoginButton = new System.Windows.Forms.Button();
             this.FriendsButton = new System.Windows.Forms.Button();
@@ -56,12 +57,15 @@ namespace project1
             this.FemaleButton = new System.Windows.Forms.RadioButton();
             this.FacebookLogoPictureBox = new System.Windows.Forms.PictureBox();
             this.rememberMeButton = new System.Windows.Forms.CheckBox();
+            this.fetchEverythingCheckBox = new System.Windows.Forms.CheckBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FriendPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FriendByStatusPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PagePictureBox)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FacebookLogoPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // LoginButton
@@ -295,8 +299,8 @@ namespace project1
             // rememberMeButton
             // 
             this.rememberMeButton.AutoSize = true;
-            this.rememberMeButton.Location = new System.Drawing.Point(133, 18);
-            this.rememberMeButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rememberMeButton.Location = new System.Drawing.Point(146, 16);
+            this.rememberMeButton.Margin = new System.Windows.Forms.Padding(2);
             this.rememberMeButton.Name = "rememberMeButton";
             this.rememberMeButton.Size = new System.Drawing.Size(94, 17);
             this.rememberMeButton.TabIndex = 30;
@@ -304,12 +308,24 @@ namespace project1
             this.rememberMeButton.UseVisualStyleBackColor = true;
             this.rememberMeButton.CheckedChanged += new System.EventHandler(this.RememberMeButton_CheckedChanged);
             // 
+            // fetchEverythingCheckBox
+            // 
+            this.fetchEverythingCheckBox.AutoSize = true;
+            this.fetchEverythingCheckBox.Location = new System.Drawing.Point(146, 38);
+            this.fetchEverythingCheckBox.Name = "fetchEverythingCheckBox";
+            this.fetchEverythingCheckBox.Size = new System.Drawing.Size(105, 17);
+            this.fetchEverythingCheckBox.TabIndex = 31;
+            this.fetchEverythingCheckBox.Text = "Fetch everything";
+            this.fetchEverythingCheckBox.UseVisualStyleBackColor = true;
+            this.fetchEverythingCheckBox.CheckedChanged += new System.EventHandler(this.FetchEverythingCheckBox_CheckedChanged);
+            // 
             // FacebookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(992, 473);
+            this.Controls.Add(this.fetchEverythingCheckBox);
             this.Controls.Add(this.rememberMeButton);
             this.Controls.Add(this.FacebookLogoPictureBox);
             this.Controls.Add(this.FemaleButton);
@@ -345,6 +361,7 @@ namespace project1
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FacebookLogoPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,5 +399,7 @@ namespace project1
         internal System.Windows.Forms.RadioButton FemaleButton;
         internal System.Windows.Forms.PictureBox FacebookLogoPictureBox;
         private System.Windows.Forms.CheckBox rememberMeButton;
+        private System.Windows.Forms.CheckBox fetchEverythingCheckBox;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }

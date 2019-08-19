@@ -9,34 +9,41 @@ namespace project1
 {
     public class FacebookFeatures
     {
-        public static void DisplayFriends(FacebookForm i_FacebookForm, User i_LoggedInUser)
-        {
-            i_FacebookForm.FriendsListBox.Items.Clear();
-            i_FacebookForm.FriendsListBox.DisplayMember = "Name";
-            foreach (User friend in i_LoggedInUser.Friends)
-            {
-                i_FacebookForm.FriendsListBox.Items.Add(friend);
-                friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
-            }
+        //public static void DisplayFriends(FacebookForm i_FacebookForm, User i_LoggedInUser)
+        //{
+        //    i_FacebookForm.FriendsListBox.Items.Clear();
+        //    i_FacebookForm.FriendsListBox.DisplayMember = "Name";
+        //    foreach (User friend in i_LoggedInUser.Friends)
+        //    {
+        //        i_FacebookForm.FriendsListBox.Items.Add(friend);
+        //        friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
+        //    }
 
-            if (i_LoggedInUser.Friends.Count == 0)
-            {
-                MessageBox.Show("No Friends to retrieve");
-            }
-        }
+        //    if (i_LoggedInUser.Friends.Count == 0)
+        //    {
+        //        MessageBox.Show("No Friends to retrieve");
+        //    }
+        //}
 
         public static void DisplayEvents(FacebookForm i_FacebookForm, User i_LoggedInUser)
         {
             i_FacebookForm.EventsListBox.Items.Clear();
             i_FacebookForm.EventsListBox.DisplayMember = "Name";
-            foreach (Event facebookEvent in i_LoggedInUser.Events)
+            try
             {
-                i_FacebookForm.EventsListBox.Items.Add(facebookEvent);
-            }
+                foreach (Event facebookEvent in i_LoggedInUser.Events)
+                {
+                    i_FacebookForm.EventsListBox.Items.Add(facebookEvent);
+                }
 
-            if (i_LoggedInUser.Events.Count == 0)
+                if (i_LoggedInUser.Events.Count == 0)
+                {
+                    MessageBox.Show("No Events to retrieve ");
+                }
+            }
+            catch (Facebook.FacebookOAuthException)
             {
-                MessageBox.Show("No Events to retrieve ");
+                MessageBox.Show("feature unavailable because of facebook");
             }
         }
 
@@ -44,16 +51,23 @@ namespace project1
         {
             i_FacebookForm.PagesListBox.Items.Clear();
             i_FacebookForm.PagesListBox.DisplayMember = "Name";
-
-            foreach (Page page in i_LoggedInUser.LikedPages)
+            try
             {
-                i_FacebookForm.PagesListBox.Items.Add(page);
+                foreach (Page page in i_LoggedInUser.LikedPages)
+                {
+                    i_FacebookForm.PagesListBox.Items.Add(page);
+                }
+
+                if (i_LoggedInUser.LikedPages.Count == 0)
+                {
+                    MessageBox.Show("No liked pages to retrieve ");
+                }
+            }
+            catch (Facebook.FacebookOAuthException)
+            {
+                MessageBox.Show("feature unavailable because of facebook");
             }
 
-            if (i_LoggedInUser.LikedPages.Count == 0)
-            {
-                MessageBox.Show("No liked pages to retrieve ");
-            }
         }
 
         public static void DisplayFriendPhoto(FacebookForm i_FacebookForm)

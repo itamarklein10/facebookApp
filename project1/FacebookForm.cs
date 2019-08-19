@@ -47,6 +47,13 @@ namespace project1
             {
                 LoggedInUserProxy userProxy = new LoggedInUserProxy(this);
             }
+            if (fetchEverythingCheckBox.Checked)
+            {
+                DisplayFriends();
+                FacebookFeatures.DisplayEvents(this, m_LoggedInUser);
+                FacebookFeatures.DisplayPages(this, m_LoggedInUser);
+                FacebookFeatures.DisplayTodaysBirthdays(m_LoggedInUser, this);
+            }
             LoginButton.Enabled = false;
 
         }
@@ -74,7 +81,7 @@ namespace project1
         }
 
 
-        public  void LoginUser()
+        public void LoginUser()
         {
             LoginResult result = FacebookService.Login("2287651948215911",
                     "public_profile",
@@ -276,6 +283,11 @@ namespace project1
         }
 
         private void FriendPicture_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FetchEverythingCheckBox_CheckedChanged(object sender, EventArgs e)
         {
 
         }
