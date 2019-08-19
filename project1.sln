@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8A6B550B-8738-468A-A968-7A9B9A07FC06}"
 	ProjectSection(SolutionItems) = preProject
 		facebookLogo.png = facebookLogo.png
+		SentenceImage.jpeg = SentenceImage.jpeg
 	EndProjectSection
 EndProject
 Global

@@ -28,82 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.sentencePictureBox = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoggedInUserProxy));
             this.sentenceLabel = new System.Windows.Forms.Label();
             this.sentenceTextBox = new System.Windows.Forms.TextBox();
             this.enterButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.sentencePictureBox)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // sentencePictureBox
-            // 
-            this.sentencePictureBox.Location = new System.Drawing.Point(22, 56);
-            this.sentencePictureBox.Margin = new System.Windows.Forms.Padding(2);
-            this.sentencePictureBox.Name = "sentencePictureBox";
-            this.sentencePictureBox.Size = new System.Drawing.Size(288, 69);
-            this.sentencePictureBox.TabIndex = 0;
-            this.sentencePictureBox.TabStop = false;
-            this.sentencePictureBox.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // sentenceLabel
             // 
             this.sentenceLabel.AutoSize = true;
             this.sentenceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sentenceLabel.Location = new System.Drawing.Point(79, 26);
-            this.sentenceLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.sentenceLabel.Location = new System.Drawing.Point(118, 40);
             this.sentenceLabel.Name = "sentenceLabel";
-            this.sentenceLabel.Size = new System.Drawing.Size(188, 17);
+            this.sentenceLabel.Size = new System.Drawing.Size(260, 25);
             this.sentenceLabel.TabIndex = 1;
             this.sentenceLabel.Text = "Please write this word below ";
             this.sentenceLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // sentenceTextBox
             // 
-            this.sentenceTextBox.Location = new System.Drawing.Point(120, 142);
-            this.sentenceTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.sentenceTextBox.Location = new System.Drawing.Point(180, 218);
             this.sentenceTextBox.Name = "sentenceTextBox";
-            this.sentenceTextBox.Size = new System.Drawing.Size(147, 20);
+            this.sentenceTextBox.Size = new System.Drawing.Size(218, 26);
             this.sentenceTextBox.TabIndex = 2;
             this.sentenceTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // enterButton
             // 
-            this.enterButton.Location = new System.Drawing.Point(35, 142);
-            this.enterButton.Margin = new System.Windows.Forms.Padding(2);
+            this.enterButton.Location = new System.Drawing.Point(52, 218);
             this.enterButton.Name = "enterButton";
-            this.enterButton.Size = new System.Drawing.Size(60, 21);
+            this.enterButton.Size = new System.Drawing.Size(90, 32);
             this.enterButton.TabIndex = 3;
             this.enterButton.Text = "enter";
             this.enterButton.UseVisualStyleBackColor = true;
             this.enterButton.Click += new System.EventHandler(this.button1_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(94, 98);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(304, 86);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // LoggedInUserProxy
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 226);
+            this.ClientSize = new System.Drawing.Size(501, 348);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.enterButton);
             this.Controls.Add(this.sentenceTextBox);
             this.Controls.Add(this.sentenceLabel);
-            this.Controls.Add(this.sentencePictureBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoggedInUserProxy";
             this.Text = "LoggedInUserProxy";
             this.Load += new System.EventHandler(this.LoggedInUserProxy_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.sentencePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox sentencePictureBox;
         private System.Windows.Forms.Label sentenceLabel;
         private System.Windows.Forms.TextBox sentenceTextBox;
         private System.Windows.Forms.Button enterButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
