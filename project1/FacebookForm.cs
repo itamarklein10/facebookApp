@@ -47,6 +47,8 @@ namespace project1
             {
                 LoggedInUserProxy userProxy = new LoggedInUserProxy(this);
             }
+            LoginButton.Enabled = false;
+
         }
 
 
