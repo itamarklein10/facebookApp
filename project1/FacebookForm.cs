@@ -9,7 +9,7 @@ namespace project1
 {
     public partial class FacebookForm : Form
     {
-        public LoggedInUserProxy m_LoggedInUser;
+        public User m_LoggedInUser { get; set; }
 
         public FacebookForm()
         {
@@ -43,10 +43,13 @@ namespace project1
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            m_LoggedInUser.SmartProxy();
+            if (!AppSetting.Instance.AutoLogin)
+            {
+                LoggedInUserProxy userProxy = new LoggedInUserProxy(this);
+            }
         }
 
-        
+
         private void AutoLogin()
         {
             try
@@ -69,7 +72,7 @@ namespace project1
         }
 
 
-        private void LoginUser()
+        public  void LoginUser()
         {
             LoginResult result = FacebookService.Login("2287651948215911",
                     "public_profile",
