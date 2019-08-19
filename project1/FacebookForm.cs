@@ -2,6 +2,8 @@
 using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
+using System.ComponentModel;
+using System.Threading;
 
 namespace project1
 {
@@ -18,6 +20,28 @@ namespace project1
         {
             LoginUser();
         }
+
+        private void AutoLogin()
+        {
+            try
+            {
+                LoginResult result = FacebookService.Connect(AppSetting.Instance.AccessToken);
+                m_LoggedInUser = result.LoggedInUser;
+                FetchUserInfo();
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message.Contains("#190"))
+                {
+                    this.Invoke((Action)LoginUser);
+                }
+                else
+                {
+                    this.Invoke(new Action(() => MessageBox.Show("Could not connect to Facebook server. Please try again later..")));
+                }
+            }
+        }
+
 
         private void LoginUser()
         {
@@ -39,16 +63,23 @@ namespace project1
                 "user_photos",
                 "user_posts"
                                 );
+            m_LoggedInUser = result.LoggedInUser;
+            AppSetting.Instance.AccessToken = result.AccessToken;
+            fetchUserInfo();
+        }
 
-            if (!string.IsNullOrEmpty(result.AccessToken))
+        private void fetchUserInfo()
+        {
+            new Thread(() =>
             {
-                m_LoggedInUser = result.LoggedInUser;
-                FetchUserInfo();
-            }
-            else
-            {
-                MessageBox.Show(result.ErrorMessage);
-            }
+                var statuses = m_LoggedInUser.Statuses;
+
+                this.Invoke(new Action(() =>
+                {
+                    ProfilePicture.LoadAsync(m_LoggedInUser.PictureNormalURL);
+                  
+                }));
+            }).Start();
         }
 
         public User LoggedUser
@@ -68,7 +99,7 @@ namespace project1
 
         private void FriendsButton_Clicked(object sender, EventArgs e)
         {
-            FacebookFeatures.DisplayFriends(this, m_LoggedInUser);
+         new Thread (  FacebookFeatures.DisplayFriends(this, m_LoggedInUser)).Start();
         }
 
         private void FacebookForm_Load(object sender, EventArgs e)
@@ -108,7 +139,7 @@ namespace project1
         {
             FacebookFeatures.DisplayFriendPhoto(this);
         }
-               
+
         private void StatusTextBox_TextChanged(object sender, EventArgs e)
         {
         }
@@ -157,7 +188,7 @@ namespace project1
         {
             FacebookFeatures.DisplayFriendByStatusAndGender(this, m_LoggedInUser);
         }
-               
+
         private void GroupBox1_Enter(object sender, EventArgs e)
         {
         }
@@ -176,6 +207,11 @@ namespace project1
 
         private void FacebookLogoPictureBox_Click(object sender, EventArgs e)
         {
+        }
+
+        private void RememberMeButton_CheckedChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

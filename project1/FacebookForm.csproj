@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppSetting.cs" />
     <Compile Include="FacebookFeatures.cs" />
     <Compile Include="FacebookForm.cs">
       <SubType>Form</SubType>
