@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 
 namespace project1
 {
-    public class AppSetting
+    class AppSetting
     {
         private static readonly string sr_FileName;
 
