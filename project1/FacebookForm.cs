@@ -99,10 +99,25 @@ namespace project1
 
         private void FriendsButton_Clicked(object sender, EventArgs e)
         {
-         new Thread (  FacebookFeatures.DisplayFriends(this, m_LoggedInUser)).Start();
+         new Thread (DisplayFriends).Start();
         }
 
-        private void FacebookForm_Load(object sender, EventArgs e)
+        public void DisplayFriends()
+        {
+            FriendsListBox.Items.Clear();
+            FriendsListBox.DisplayMember = "Name";
+            foreach (User friend in m_LoggedInUser.Friends)
+            {
+                FriendsListBox.Items.Add(friend);
+                friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
+            }
+
+            if (m_LoggedInUser.Friends.Count == 0)
+            {
+                MessageBox.Show("No Friends to retrieve");
+            }
+        }
+            private void FacebookForm_Load(object sender, EventArgs e)
         {
         }
 
