@@ -9,7 +9,7 @@ namespace project1
 {
     public partial class FacebookForm : Form
     {
-        public User m_LoggedInUser { get; set; }
+        public LoggedInUserProxy m_LoggedInUser;
 
         public FacebookForm()
         {
@@ -43,9 +43,10 @@ namespace project1
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            LoginUser();
+            m_LoggedInUser.SmartProxy();
         }
 
+        
         private void AutoLogin()
         {
             try
@@ -98,14 +99,19 @@ namespace project1
             new Thread(() =>
             {
                 var statuses = m_LoggedInUser.Statuses;
-                if (m_LoggedInUser.Posts.Count > 0)
+
+                this.Invoke(new Action(() =>
                 {
-                    StatusTextBox.Text = m_LoggedInUser.Posts[0].Message;
-                }
+                    if (m_LoggedInUser.Posts.Count > 0)
+                    {
+                        StatusTextBox.Text = m_LoggedInUser.Posts[0].Message;
+                    }
+                }));
+
                 this.Invoke(new Action(() =>
                 {
                     ProfilePicture.LoadAsync(m_LoggedInUser.PictureNormalURL);
-                  
+
                 }));
             }).Start();
         }
@@ -116,7 +122,7 @@ namespace project1
             set { m_LoggedInUser = value; }
         }
 
-        //private void FetchUserInfo()
+        //private void FetchStatusInfo()
         //{
         //    ProfilePicture.LoadAsync(m_LoggedInUser.PictureNormalURL);
         //    if (m_LoggedInUser.Posts.Count > 0)
@@ -127,25 +133,32 @@ namespace project1
 
         private void FriendsButton_Clicked(object sender, EventArgs e)
         {
-         new Thread (DisplayFriends).Start();
+            new Thread(DisplayFriends).Start();
         }
 
         public void DisplayFriends()
         {
-            FriendsListBox.Items.Clear();
-            FriendsListBox.DisplayMember = "Name";
-            foreach (User friend in m_LoggedInUser.Friends)
-            {
-                FriendsListBox.Items.Add(friend);
-                friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
-            }
 
-            if (m_LoggedInUser.Friends.Count == 0)
-            {
-                MessageBox.Show("No Friends to retrieve");
-            }
+            FriendsListBox.Invoke(new Action(
+              () =>
+              {
+                  FriendsListBox.Items.Clear();
+                  FriendsListBox.DisplayMember = "Name";
+                  foreach (User friend in m_LoggedInUser.Friends)
+                  {
+                      FriendsListBox.Items.Add(friend);
+                      friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
+                  }
+
+                  if (m_LoggedInUser.Friends.Count == 0)
+                  {
+                      MessageBox.Show("No Friends to retrieve");
+                  }
+              }
+              )
+              );
         }
-            private void FacebookForm_Load(object sender, EventArgs e)
+        private void FacebookForm_Load(object sender, EventArgs e)
         {
         }
 

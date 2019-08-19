@@ -379,7 +379,7 @@ namespace project1
 
         private void RememberMeButton_CheckedChanged(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
 
         #endregion
