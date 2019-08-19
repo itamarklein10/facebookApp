@@ -40,26 +40,29 @@
             // 
             this.sentenceLabel.AutoSize = true;
             this.sentenceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sentenceLabel.Location = new System.Drawing.Point(118, 40);
+            this.sentenceLabel.Location = new System.Drawing.Point(79, 26);
+            this.sentenceLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.sentenceLabel.Name = "sentenceLabel";
-            this.sentenceLabel.Size = new System.Drawing.Size(260, 25);
+            this.sentenceLabel.Size = new System.Drawing.Size(188, 17);
             this.sentenceLabel.TabIndex = 1;
             this.sentenceLabel.Text = "Please write this word below ";
             this.sentenceLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // sentenceTextBox
             // 
-            this.sentenceTextBox.Location = new System.Drawing.Point(180, 218);
+            this.sentenceTextBox.Location = new System.Drawing.Point(34, 141);
+            this.sentenceTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.sentenceTextBox.Name = "sentenceTextBox";
-            this.sentenceTextBox.Size = new System.Drawing.Size(218, 26);
+            this.sentenceTextBox.Size = new System.Drawing.Size(147, 20);
             this.sentenceTextBox.TabIndex = 2;
             this.sentenceTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // enterButton
             // 
-            this.enterButton.Location = new System.Drawing.Point(52, 218);
+            this.enterButton.Location = new System.Drawing.Point(194, 141);
+            this.enterButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.enterButton.Name = "enterButton";
-            this.enterButton.Size = new System.Drawing.Size(90, 32);
+            this.enterButton.Size = new System.Drawing.Size(60, 21);
             this.enterButton.TabIndex = 3;
             this.enterButton.Text = "enter";
             this.enterButton.UseVisualStyleBackColor = true;
@@ -68,25 +71,30 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(94, 98);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 45);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(304, 86);
+            this.pictureBox1.Size = new System.Drawing.Size(312, 74);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
             // LoggedInUserProxy
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AcceptButton = this.enterButton;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(501, 348);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(334, 207);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.enterButton);
             this.Controls.Add(this.sentenceTextBox);
             this.Controls.Add(this.sentenceLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoggedInUserProxy";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "LoggedInUserProxy";
             this.Load += new System.EventHandler(this.LoggedInUserProxy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

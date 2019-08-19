@@ -130,6 +130,23 @@ namespace project1
 
                 if (checkIfAddToTheList)
                 {
+                    if (i_FacebookForm.FriendsByStatusListBox.Items.Count>0)
+                    {
+                        UserPrototype friendPrototype = (UserPrototype)i_FacebookForm.FriendsByStatusListBox.Items[0];
+                        UserPrototype newUserPrototype = friendPrototype.ShalowClone();
+                        newUserPrototype.m_Name = friend.Name;
+                        newUserPrototype.PictureNormalURL = friend.PictureNormalURL;
+                        i_FacebookForm.FriendsByStatusListBox.Items.Add(newUserPrototype);
+                    }
+                    else
+                    {//first user add to the list box
+                        UserPrototype firstUserPrototype = new UserPrototype();
+                        firstUserPrototype.m_Name= friend.Name;
+                        firstUserPrototype.e_Gender = (eGender)friend.Gender;
+                        firstUserPrototype.e_UserStatus = (eRelationshipStatus)friend.RelationshipStatus;
+                        firstUserPrototype.PictureNormalURL = friend.PictureNormalURL;
+                        i_FacebookForm.FriendsByStatusListBox.Items.Add(firstUserPrototype);
+                    }
                     i_FacebookForm.FriendsByStatusListBox.Items.Add(friend);
                     friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
                 }

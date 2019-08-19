@@ -221,7 +221,7 @@ namespace project1
         {
             if (FriendsByStatusListBox.SelectedItems.Count == 1)
             {
-                User selectedFriend = FriendsByStatusListBox.SelectedItem as User;
+                UserPrototype selectedFriend = FriendsByStatusListBox.SelectedItem as UserPrototype;
                 FriendByStatusPictureBox.LoadAsync(selectedFriend.PictureNormalURL);
             }
         }
@@ -269,6 +269,11 @@ namespace project1
         }
 
         private void RememberMeButton_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FriendPicture_Click(object sender, EventArgs e)
         {
 
         }
