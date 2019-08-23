@@ -12,12 +12,13 @@ namespace project1
     public class AppSetting
     {
         private static readonly string sr_FileName;
+        private static AppSetting s_This;
 
         static AppSetting()
         {
             sr_FileName = Application.ExecutablePath + ".settings.xml";
         }
-        private static AppSetting s_This;
+
         public static AppSetting Instance
         {
             get
@@ -28,21 +29,6 @@ namespace project1
                 }
 
                 return s_This;
-            }
-        }
-
-        public bool AutoLogin { get; set; }
-        public Size LastWindowSize { get; set; }
-        public FormWindowState LastWindowState { get; set; }
-        public Point LastWindowLocation { get; set; }
-        public string AccessToken { get; set; }
-
-        public void Save()
-        {
-            using (FileStream stream = new FileStream(sr_FileName, FileMode.Create))
-            {
-                XmlSerializer serializer = new XmlSerializer(typeof(AppSetting));
-                serializer.Serialize(stream, this);
             }
         }
 
@@ -72,5 +58,23 @@ namespace project1
             return loadedThis;
         }
 
+        public bool AutoLogin { get; set; }
+
+        public Size LastWindowSize { get; set; }
+
+        public FormWindowState LastWindowState { get; set; }
+
+        public Point LastWindowLocation { get; set; }
+
+        public string AccessToken { get; set; }
+
+        public void Save()
+        {
+            using (FileStream stream = new FileStream(sr_FileName, FileMode.Create))
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(AppSetting));
+                serializer.Serialize(stream, this);
+            }
+        }   
     }
 }

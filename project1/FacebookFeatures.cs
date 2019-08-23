@@ -9,22 +9,6 @@ namespace project1
 {
     public class FacebookFeatures
     {
-        //public static void DisplayFriends(FacebookForm i_FacebookForm, User i_LoggedInUser)
-        //{
-        //    i_FacebookForm.FriendsListBox.Items.Clear();
-        //    i_FacebookForm.FriendsListBox.DisplayMember = "Name";
-        //    foreach (User friend in i_LoggedInUser.Friends)
-        //    {
-        //        i_FacebookForm.FriendsListBox.Items.Add(friend);
-        //        friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
-        //    }
-
-        //    if (i_LoggedInUser.Friends.Count == 0)
-        //    {
-        //        MessageBox.Show("No Friends to retrieve");
-        //    }
-        //}
-
         public static void DisplayEvents(FacebookForm i_FacebookForm, User i_LoggedInUser)
         {
             i_FacebookForm.EventsListBox.Items.Clear();
@@ -33,7 +17,6 @@ namespace project1
             {
                 foreach (Event facebookEvent in i_LoggedInUser.Events)
                 {
-                    
                     i_FacebookForm.EventsListBox.Items.Add(facebookEvent);
                 }
 
@@ -68,7 +51,6 @@ namespace project1
             {
                 MessageBox.Show("feature unavailable because of facebook");
             }
-
         }
 
         public static void DisplayFriendPhoto(FacebookForm i_FacebookForm)
@@ -155,18 +137,20 @@ namespace project1
                             i_FacebookForm.FriendsByStatusListBox.Items.Add(newUserPrototype);
                         }
                         else
-                        {//first user add to the list box
-                            UserPrototype firstUserPrototype = new UserPrototype();
-                            firstUserPrototype.m_Name = friend.Name;
-                            firstUserPrototype.e_Gender = (eGender)friend.Gender;
-                            firstUserPrototype.e_UserStatus = (eRelationshipStatus)friend.RelationshipStatus;
-                            firstUserPrototype.PictureNormalURL = friend.PictureNormalURL;
+                        { ////first user add to the list box
+                            UserPrototype firstUserPrototype = new UserPrototype
+                            {
+                                m_Name = friend.Name,
+                                e_Gender = (eGender)friend.Gender,
+                                e_UserStatus = (eRelationshipStatus)friend.RelationshipStatus,
+                                PictureNormalURL = friend.PictureNormalURL
+                            };
                             i_FacebookForm.FriendsByStatusListBox.Items.Add(firstUserPrototype);
                         }
+
                         i_FacebookForm.FriendsByStatusListBox.Items.Add(friend);
                         friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
                     }
-
                 }
             }
             catch (InvalidOperationException)

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
-using FacebookWrapper.ObjectModel;
-using FacebookWrapper;
 using System.ComponentModel;
 using System.Threading;
+using FacebookWrapper.ObjectModel;
+using FacebookWrapper;
 
 namespace project1
 {
@@ -47,6 +47,7 @@ namespace project1
             {
                 LoggedInUserProxy userProxy = new LoggedInUserProxy(this);
             }
+
             if (fetchEverythingCheckBox.Checked)
             {
                 DisplayFriends();
@@ -54,6 +55,7 @@ namespace project1
                 FacebookFeatures.DisplayPages(this, m_LoggedInUser);
                 FacebookFeatures.DisplayTodaysBirthdays(m_LoggedInUser, this);
             }
+
             loginButton.Enabled = false;
             birthdayButton.Enabled = true;
             FriendsButton.Enabled = true;
@@ -66,7 +68,6 @@ namespace project1
             statusButton.Enabled = true;
             showFriendByStatusLinkedLabel.Enabled = true;
         }
-
 
         private void AutoLogin()
         {
@@ -88,7 +89,6 @@ namespace project1
                 }
             }
         }
-
 
         public void LoginUser()
         {
@@ -132,7 +132,6 @@ namespace project1
                 this.Invoke(new Action(() =>
                 {
                     ProfilePicture.LoadAsync(m_LoggedInUser.PictureNormalURL);
-
                 }));
             }).Start();
         }
@@ -143,15 +142,6 @@ namespace project1
             set { m_LoggedInUser = value; }
         }
 
-        //private void FetchStatusInfo()
-        //{
-        //    ProfilePicture.LoadAsync(m_LoggedInUser.PictureNormalURL);
-        //    if (m_LoggedInUser.Posts.Count > 0)
-        //    {
-        //        StatusTextBox.Text = m_LoggedInUser.Posts[0].Message;
-        //    }
-        //}
-
         private void FriendsButton_Clicked(object sender, EventArgs e)
         {
             new Thread(DisplayFriends).Start();
@@ -159,7 +149,6 @@ namespace project1
 
         public void DisplayFriends()
         {
-
             FriendsListBox.Invoke(new Action(
               () =>
               {
@@ -175,10 +164,9 @@ namespace project1
                   {
                       MessageBox.Show("No Friends to retrieve");
                   }
-              }
-              )
-              );
+              }));
         }
+
         private void FacebookForm_Load(object sender, EventArgs e)
         {
         }
@@ -274,7 +262,6 @@ namespace project1
             FacebookFeatures.DisplayFriendByStatusAndGender(this, m_LoggedInUser);
             maleButton.Checked = true;
             singleFriendButton.Checked = true;
-
         }
 
         private void GroupBox1_Enter(object sender, EventArgs e)
@@ -299,27 +286,33 @@ namespace project1
 
         private void RememberMeButton_CheckedChanged_1(object sender, EventArgs e)
         {
-
         }
 
         private void FriendPicture_Click(object sender, EventArgs e)
         {
-
         }
 
         private void FetchEverythingCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-
         }
 
         private void RemoveEvent_Click(object sender, EventArgs e)
         {
-            if (EventsListBox.SelectedItems.Count == 1)
+            EventsListBox.Invoke(new Action(
+            () =>
             {
-                Event selectedEvent = EventsListBox.SelectedItem as Event;
-                selectedEvent.DeclinedUsers.Add(m_LoggedInUser);
-                EventsListBox.SelectedItems.Remove(selectedEvent);
-            }
+                if (EventsListBox.SelectedItems.Count == 1)
+                {
+                    Event selectedEvent = EventsListBox.SelectedItem as Event;
+                    selectedEvent.DeclinedUsers.Add(m_LoggedInUser);
+                    EventsListBox.SelectedItems.Remove(selectedEvent);
+                }
+
+                if (EventsListBox.SelectedItems.Count == 0)
+                {
+                    MessageBox.Show("no event was picked");
+                }
+            }));
         }
     }
 }

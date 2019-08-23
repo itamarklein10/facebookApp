@@ -1,6 +1,6 @@
 ﻿namespace project1
 {
-    partial class LoggedInUserProxy
+    public partial class LoggedInUserProxy
     {
         /// <summary>
         /// Required designer variable.
@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
