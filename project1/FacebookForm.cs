@@ -143,15 +143,6 @@ namespace project1
             set { m_LoggedInUser = value; }
         }
 
-        //private void FetchStatusInfo()
-        //{
-        //    ProfilePicture.LoadAsync(m_LoggedInUser.PictureNormalURL);
-        //    if (m_LoggedInUser.Posts.Count > 0)
-        //    {
-        //        StatusTextBox.Text = m_LoggedInUser.Posts[0].Message;
-        //    }
-        //}
-
         private void FriendsButton_Clicked(object sender, EventArgs e)
         {
             new Thread(DisplayFriends).Start();
@@ -283,6 +274,7 @@ namespace project1
 
         private void MaleButton_CheckedChanged(object sender, EventArgs e)
         {
+
         }
 
         private void FemaleButton_CheckedChanged(object sender, EventArgs e)
@@ -314,12 +306,23 @@ namespace project1
 
         private void RemoveEvent_Click(object sender, EventArgs e)
         {
-            if (EventsListBox.SelectedItems.Count == 1)
-            {
-                Event selectedEvent = EventsListBox.SelectedItem as Event;
-                selectedEvent.DeclinedUsers.Add(m_LoggedInUser);
-                EventsListBox.SelectedItems.Remove(selectedEvent);
-            }
+            EventsListBox.Invoke(new Action(
+            () =>
+      {
+
+          if (EventsListBox.SelectedItems.Count == 1)
+          {
+              Event selectedEvent = EventsListBox.SelectedItem as Event;
+              selectedEvent.DeclinedUsers.Add(m_LoggedInUser);
+              EventsListBox.SelectedItems.Remove(selectedEvent);
+          }
+          if(EventsListBox.SelectedItems.Count==0)
+          {
+              MessageBox.Show("no event was picked");
+          }
+      }
+      )
+      );
         }
     }
 }

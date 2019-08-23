@@ -69,10 +69,10 @@ namespace project1
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // LoginButton
+            // loginButton
             // 
             this.loginButton.Location = new System.Drawing.Point(38, 12);
-            this.loginButton.Name = "LoginButton";
+            this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(75, 23);
             this.loginButton.TabIndex = 0;
             this.loginButton.Text = "Login";
@@ -90,22 +90,22 @@ namespace project1
             this.FriendsButton.UseVisualStyleBackColor = true;
             this.FriendsButton.Click += new System.EventHandler(this.FriendsButton_Clicked);
             // 
-            // PageButton
+            // pageButton
             // 
             this.pageButton.Enabled = false;
             this.pageButton.Location = new System.Drawing.Point(268, 251);
-            this.pageButton.Name = "PageButton";
+            this.pageButton.Name = "pageButton";
             this.pageButton.Size = new System.Drawing.Size(75, 23);
             this.pageButton.TabIndex = 4;
             this.pageButton.Text = "Pages";
             this.pageButton.UseVisualStyleBackColor = true;
             this.pageButton.Click += new System.EventHandler(this.PageButton_Clicked);
             // 
-            // BirthdayButton
+            // birthdayButton
             // 
             this.birthdayButton.Enabled = false;
             this.birthdayButton.Location = new System.Drawing.Point(520, 12);
-            this.birthdayButton.Name = "BirthdayButton";
+            this.birthdayButton.Name = "birthdayButton";
             this.birthdayButton.Size = new System.Drawing.Size(99, 23);
             this.birthdayButton.TabIndex = 6;
             this.birthdayButton.Text = "Today\'s Birthdays";
@@ -139,11 +139,11 @@ namespace project1
             this.BirthdaysListBox.TabIndex = 10;
             this.BirthdaysListBox.SelectedIndexChanged += new System.EventHandler(this.BirthdaysListBox_SelectedIndexChanged);
             // 
-            // EventsButton
+            // eventsButton
             // 
             this.eventsButton.Enabled = false;
             this.eventsButton.Location = new System.Drawing.Point(513, 250);
-            this.eventsButton.Name = "EventsButton";
+            this.eventsButton.Name = "eventsButton";
             this.eventsButton.Size = new System.Drawing.Size(75, 23);
             this.eventsButton.TabIndex = 11;
             this.eventsButton.Text = "Events";
@@ -194,11 +194,11 @@ namespace project1
             this.FriendPicture.TabStop = false;
             this.FriendPicture.Click += new System.EventHandler(this.FriendPicture_Click);
             // 
-            // StatusButton
+            // statusButton
             // 
             this.statusButton.Enabled = false;
             this.statusButton.Location = new System.Drawing.Point(165, 96);
-            this.statusButton.Name = "StatusButton";
+            this.statusButton.Name = "statusButton";
             this.statusButton.Size = new System.Drawing.Size(75, 23);
             this.statusButton.TabIndex = 17;
             this.statusButton.Text = "Post Status";
@@ -222,25 +222,25 @@ namespace project1
             this.PagePictureBox.TabIndex = 20;
             this.PagePictureBox.TabStop = false;
             // 
-            // MarriedFriendsButton
+            // marriedFriendsButton
             // 
             this.marriedFriendsButton.AutoSize = true;
             this.marriedFriendsButton.Enabled = false;
             this.marriedFriendsButton.Location = new System.Drawing.Point(3, 35);
-            this.marriedFriendsButton.Name = "MarriedFriendsButton";
+            this.marriedFriendsButton.Name = "marriedFriendsButton";
             this.marriedFriendsButton.Size = new System.Drawing.Size(97, 17);
             this.marriedFriendsButton.TabIndex = 22;
             this.marriedFriendsButton.Text = "Married Friends";
             this.marriedFriendsButton.UseVisualStyleBackColor = true;
             this.marriedFriendsButton.CheckedChanged += new System.EventHandler(this.MarriedFriendsButton_CheckedChanged);
             // 
-            // SingleFriendButton
+            // singleFriendButton
             // 
             this.singleFriendButton.AutoSize = true;
             this.singleFriendButton.Checked = true;
             this.singleFriendButton.Enabled = false;
             this.singleFriendButton.Location = new System.Drawing.Point(3, 12);
-            this.singleFriendButton.Name = "SingleFriendButton";
+            this.singleFriendButton.Name = "singleFriendButton";
             this.singleFriendButton.Size = new System.Drawing.Size(91, 17);
             this.singleFriendButton.TabIndex = 23;
             this.singleFriendButton.TabStop = true;
@@ -248,14 +248,14 @@ namespace project1
             this.singleFriendButton.UseVisualStyleBackColor = true;
             this.singleFriendButton.CheckedChanged += new System.EventHandler(this.RadioButton2_CheckedChanged);
             // 
-            // ShowFriendByStatusLinkedLabel
+            // showFriendByStatusLinkedLabel
             // 
             this.showFriendByStatusLinkedLabel.AutoSize = true;
             this.showFriendByStatusLinkedLabel.BackColor = System.Drawing.Color.LightCyan;
             this.showFriendByStatusLinkedLabel.Enabled = false;
             this.showFriendByStatusLinkedLabel.LinkColor = System.Drawing.Color.Navy;
-            this.showFriendByStatusLinkedLabel.Location = new System.Drawing.Point(718, 185);
-            this.showFriendByStatusLinkedLabel.Name = "ShowFriendByStatusLinkedLabel";
+            this.showFriendByStatusLinkedLabel.Location = new System.Drawing.Point(719, 185);
+            this.showFriendByStatusLinkedLabel.Name = "showFriendByStatusLinkedLabel";
             this.showFriendByStatusLinkedLabel.Size = new System.Drawing.Size(113, 13);
             this.showFriendByStatusLinkedLabel.TabIndex = 26;
             this.showFriendByStatusLinkedLabel.TabStop = true;
@@ -271,13 +271,13 @@ namespace project1
             this.panel1.Size = new System.Drawing.Size(109, 54);
             this.panel1.TabIndex = 24;
             // 
-            // MaleButton
+            // maleButton
             // 
             this.maleButton.AutoSize = true;
             this.maleButton.Checked = true;
             this.maleButton.Enabled = false;
             this.maleButton.Location = new System.Drawing.Point(722, 201);
-            this.maleButton.Name = "MaleButton";
+            this.maleButton.Name = "maleButton";
             this.maleButton.Size = new System.Drawing.Size(48, 17);
             this.maleButton.TabIndex = 24;
             this.maleButton.TabStop = true;
@@ -285,12 +285,12 @@ namespace project1
             this.maleButton.UseVisualStyleBackColor = true;
             this.maleButton.CheckedChanged += new System.EventHandler(this.MaleButton_CheckedChanged);
             // 
-            // FemaleButton
+            // femaleButton
             // 
             this.femaleButton.AutoSize = true;
             this.femaleButton.Enabled = false;
             this.femaleButton.Location = new System.Drawing.Point(772, 201);
-            this.femaleButton.Name = "FemaleButton";
+            this.femaleButton.Name = "femaleButton";
             this.femaleButton.Size = new System.Drawing.Size(59, 17);
             this.femaleButton.TabIndex = 27;
             this.femaleButton.Text = "Female";
