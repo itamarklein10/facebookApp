@@ -66,7 +66,7 @@
             this.enterButton.TabIndex = 3;
             this.enterButton.Text = "enter";
             this.enterButton.UseVisualStyleBackColor = true;
-            this.enterButton.Click += new System.EventHandler(this.button1_Click);
+            this.enterButton.Click += new System.EventHandler(this.EnterSentence_Click);
             // 
             // pictureBox1
             // 

@@ -32,7 +32,7 @@ namespace project1
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void EnterSentence_Click(object sender, EventArgs e)
         {
             if (sentenceTextBox.Text == "EWERB" || sentenceTextBox.Text == "ewerb")
             {
