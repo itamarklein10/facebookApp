@@ -13,7 +13,7 @@ namespace project1
 {
     public partial class LoggedInUserProxy : Form
     {
-        FacebookForm m_FacebookForm;
+       private FacebookForm m_FacebookForm;
 
         public LoggedInUserProxy(FacebookForm i_facebookForm)
         {
@@ -24,15 +24,13 @@ namespace project1
 
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void EnterSentence_Click(object sender, EventArgs e)
         {
             if (sentenceTextBox.Text == "EWERB" || sentenceTextBox.Text == "ewerb")
             {
@@ -47,12 +45,10 @@ namespace project1
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void LoggedInUserProxy_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

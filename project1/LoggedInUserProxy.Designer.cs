@@ -1,6 +1,6 @@
 ﻿namespace project1
 {
-    partial class LoggedInUserProxy
+    public partial class LoggedInUserProxy
     {
         /// <summary>
         /// Required designer variable.
@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -66,7 +67,7 @@
             this.enterButton.TabIndex = 3;
             this.enterButton.Text = "enter";
             this.enterButton.UseVisualStyleBackColor = true;
-            this.enterButton.Click += new System.EventHandler(this.button1_Click);
+            this.enterButton.Click += new System.EventHandler(this.EnterSentence_Click);
             // 
             // pictureBox1
             // 
