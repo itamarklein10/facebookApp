@@ -7,11 +7,11 @@ using FacebookWrapper;
 
 namespace project1
 {
-    public partial class FacebookForm : Form
+    public partial class FormFacebook : Form
     {
         public User m_LoggedInUser { get; set; }
 
-        public FacebookForm()
+        public FormFacebook()
         {
             InitializeComponent();
         }
@@ -45,7 +45,7 @@ namespace project1
         {
             if (!AppSetting.Instance.AutoLogin)
             {
-                LoggedInUserProxy userProxy = new LoggedInUserProxy(this);
+                FormLoggedInUserProxy userProxy = new FormLoggedInUserProxy(this);
             }
 
             if (fetchEverythingCheckBox.Checked)

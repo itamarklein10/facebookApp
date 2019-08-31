@@ -9,7 +9,7 @@ namespace project1
 {
     public class FacebookFeatures
     {
-        public static void DisplayEvents(FacebookForm i_FacebookForm, User i_LoggedInUser)
+        public static void DisplayEvents(FormFacebook i_FacebookForm, User i_LoggedInUser)
         {
             i_FacebookForm.EventsListBox.Items.Clear();
             i_FacebookForm.EventsListBox.DisplayMember = "Name";
@@ -31,7 +31,7 @@ namespace project1
             }
         }
 
-        public static void DisplayPages(FacebookForm i_FacebookForm, User i_LoggedInUser)
+        public static void DisplayPages(FormFacebook i_FacebookForm, User i_LoggedInUser)
         {
             i_FacebookForm.PagesListBox.Items.Clear();
             i_FacebookForm.PagesListBox.DisplayMember = "Name";
@@ -53,7 +53,7 @@ namespace project1
             }
         }
 
-        public static void DisplayFriendPhoto(FacebookForm i_FacebookForm)
+        public static void DisplayFriendPhoto(FormFacebook i_FacebookForm)
         {
             if (i_FacebookForm.FriendsListBox.SelectedItems.Count == 1)
             {
@@ -69,7 +69,7 @@ namespace project1
             }
         }
 
-        public static void DisplayTodaysBirthdays(User i_LoggedInUser, FacebookForm i_FacebookForm)
+        public static void DisplayTodaysBirthdays(User i_LoggedInUser, FormFacebook i_FacebookForm)
         {
             string birthday;
             i_FacebookForm.BirthdaysListBox.Items.Clear();
@@ -103,7 +103,7 @@ namespace project1
             }
         }
 
-        public static void DisplayFriendByStatusAndGender(FacebookForm i_FacebookForm, User i_LoggedInUser)
+        public static void DisplayFriendByStatusAndGender(FormFacebook i_FacebookForm, User i_LoggedInUser)
         {
             i_FacebookForm.FriendsByStatusListBox.Items.Clear();
             i_FacebookForm.FriendsByStatusListBox.DisplayMember = "Name";

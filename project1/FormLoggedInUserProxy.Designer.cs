@@ -1,6 +1,6 @@
 ﻿namespace project1
 {
-    public partial class LoggedInUserProxy
+    public partial class FormLoggedInUserProxy
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoggedInUserProxy));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLoggedInUserProxy));
             this.sentenceLabel = new System.Windows.Forms.Label();
             this.sentenceTextBox = new System.Windows.Forms.TextBox();
             this.enterButton = new System.Windows.Forms.Button();

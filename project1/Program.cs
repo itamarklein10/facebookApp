@@ -18,7 +18,7 @@ namespace project1
             FacebookService.s_UseForamttedToStrings = true;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FacebookForm());
+            Application.Run(new FormFacebook());
         }
     }
 }

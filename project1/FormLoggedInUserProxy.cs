@@ -11,11 +11,11 @@ using FacebookWrapper;
 
 namespace project1
 {
-    public partial class LoggedInUserProxy : Form
+    public partial class FormLoggedInUserProxy : Form
     {
-       private FacebookForm m_FacebookForm;
+       private FormFacebook m_FacebookForm;
 
-        public LoggedInUserProxy(FacebookForm i_facebookForm)
+        public FormLoggedInUserProxy(FormFacebook i_facebookForm)
         {
             InitializeComponent();
             m_FacebookForm = i_facebookForm;

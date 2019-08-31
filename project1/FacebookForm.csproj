@@ -52,26 +52,26 @@
   <ItemGroup>
     <Compile Include="AppSetting.cs" />
     <Compile Include="FacebookFeatures.cs" />
-    <Compile Include="FacebookForm.cs">
+    <Compile Include="FormFacebook.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FacebookForm.Designer.cs">
-      <DependentUpon>FacebookForm.cs</DependentUpon>
+    <Compile Include="FormFacebook.Designer.cs">
+      <DependentUpon>FormFacebook.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoggedInUserProxy.cs">
+    <Compile Include="FormLoggedInUserProxy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoggedInUserProxy.Designer.cs">
-      <DependentUpon>LoggedInUserProxy.cs</DependentUpon>
+    <Compile Include="FormLoggedInUserProxy.Designer.cs">
+      <DependentUpon>FormLoggedInUserProxy.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserPrototype.cs" />
-    <EmbeddedResource Include="FacebookForm.resx">
-      <DependentUpon>FacebookForm.cs</DependentUpon>
+    <EmbeddedResource Include="FormFacebook.resx">
+      <DependentUpon>FormFacebook.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoggedInUserProxy.resx">
-      <DependentUpon>LoggedInUserProxy.cs</DependentUpon>
+    <EmbeddedResource Include="FormLoggedInUserProxy.resx">
+      <DependentUpon>FormLoggedInUserProxy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

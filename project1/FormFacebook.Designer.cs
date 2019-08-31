@@ -2,7 +2,7 @@
 
 namespace project1
 {
-    public partial class FacebookForm
+    public partial class FormFacebook
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace project1
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacebookForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFacebook));
             this.loginButton = new System.Windows.Forms.Button();
             this.FriendsButton = new System.Windows.Forms.Button();
             this.pageButton = new System.Windows.Forms.Button();
