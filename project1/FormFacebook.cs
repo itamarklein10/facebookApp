@@ -350,6 +350,23 @@ namespace project1
             }
             saveStrategy.SaveImage(ProfilePicture.Image, dlg.FileName);
         }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (checkedListBox1.CheckedItems.Count != 0)
+            {
+                // If so, loop through all checked items and print results.  
+                string s = "";
+                for (int x = 0; x < checkedListBox1.CheckedItems.Count; x++)
+                {
+
+                    s = s + "Checked Item " + (x + 1).ToString() + " = " + checkedListBox1.CheckedItems[x].ToString() + "\n";
+                }
+          
+            }
+        }
+
+
     }
 }
 

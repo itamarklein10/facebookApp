@@ -61,6 +61,8 @@ namespace project1
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.declineButton = new System.Windows.Forms.Button();
             this.SaveProfielPicturebutton = new System.Windows.Forms.Button();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FriendPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FriendByStatusPictureBox)).BeginInit();
@@ -342,15 +344,33 @@ namespace project1
             this.declineButton.UseVisualStyleBackColor = true;
             this.declineButton.Click += new System.EventHandler(this.RemoveEvent_Click);
             // 
-            // SaveProfielPicturebutton
+            // checkedListBox1
             // 
-            this.SaveProfielPicturebutton.Location = new System.Drawing.Point(38, 185);
-            this.SaveProfielPicturebutton.Name = "SaveProfielPicturebutton";
-            this.SaveProfielPicturebutton.Size = new System.Drawing.Size(75, 23);
-            this.SaveProfielPicturebutton.TabIndex = 33;
-            this.SaveProfielPicturebutton.Text = "Save image";
-            this.SaveProfielPicturebutton.UseVisualStyleBackColor = true;
-            this.SaveProfielPicturebutton.Click += new System.EventHandler(this.SaveProfielPictureButton_Click);
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "fetch friends",
+            "fetch events",
+            "fetch today birthdays",
+            "post status",
+            "show friends by status",
+            "fetch events",
+            "fetch pages"});
+            this.checkedListBox1.Location = new System.Drawing.Point(238, 158);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(218, 151);
+            this.checkedListBox1.TabIndex = 33;
+            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(244, 109);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(213, 40);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "please choose what features\r\n do you want upon login";
+            // 
+            // FormFacebook
             // 
             // FormFacebook
             // 
@@ -385,6 +405,7 @@ namespace project1
             this.Controls.Add(this.FriendsButton);
             this.Controls.Add(this.loginButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormFacebook";
