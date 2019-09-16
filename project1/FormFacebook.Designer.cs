@@ -60,6 +60,7 @@ namespace project1
             this.fetchEverythingCheckBox = new System.Windows.Forms.CheckBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.declineButton = new System.Windows.Forms.Button();
+            this.SaveProfielPicturebutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FriendPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FriendByStatusPictureBox)).BeginInit();
@@ -341,13 +342,24 @@ namespace project1
             this.declineButton.UseVisualStyleBackColor = true;
             this.declineButton.Click += new System.EventHandler(this.RemoveEvent_Click);
             // 
-            // FacebookForm
+            // SaveProfielPicturebutton
+            // 
+            this.SaveProfielPicturebutton.Location = new System.Drawing.Point(38, 185);
+            this.SaveProfielPicturebutton.Name = "SaveProfielPicturebutton";
+            this.SaveProfielPicturebutton.Size = new System.Drawing.Size(75, 23);
+            this.SaveProfielPicturebutton.TabIndex = 33;
+            this.SaveProfielPicturebutton.Text = "Save image";
+            this.SaveProfielPicturebutton.UseVisualStyleBackColor = true;
+            this.SaveProfielPicturebutton.Click += new System.EventHandler(this.SaveProfielPictureButton_Click);
+            // 
+            // FormFacebook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(992, 473);
+            this.Controls.Add(this.SaveProfielPicturebutton);
             this.Controls.Add(this.declineButton);
             this.Controls.Add(this.fetchEverythingCheckBox);
             this.Controls.Add(this.rememberMeButton);
@@ -375,7 +387,7 @@ namespace project1
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FacebookForm";
+            this.Name = "FormFacebook";
             this.Text = " ";
             this.Load += new System.EventHandler(this.FacebookForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).EndInit();
@@ -426,5 +438,6 @@ namespace project1
         private System.Windows.Forms.CheckBox fetchEverythingCheckBox;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Button declineButton;
+        private System.Windows.Forms.Button SaveProfielPicturebutton;
     }
 }

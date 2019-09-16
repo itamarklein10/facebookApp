@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Threading;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
+using System.IO;
 
 namespace project1
 {
@@ -309,7 +310,7 @@ namespace project1
               selectedEvent.DeclinedUsers.Add(m_LoggedInUser);
               EventsListBox.SelectedItems.Remove(selectedEvent);
           }
-          if(EventsListBox.SelectedItems.Count==0)
+          if (EventsListBox.SelectedItems.Count == 0)
           {
               MessageBox.Show("no event was picked");
           }
@@ -317,5 +318,38 @@ namespace project1
       )
       );
         }
+
+        private void SaveProfielPictureButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.Filter = "Image Files (*.bmp , *.jpg, *.png, *.gif)|*.bmp;*.jpg*.png;*.gif";
+
+            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.Cancel) { return; }
+
+            project1.Strategy.IImageSaveStrategy saveStrategy;
+
+            var extension = Path.GetExtension(dlg.FileName);
+
+            switch (extension.ToLower())
+            {
+                case ".jpg":
+                    saveStrategy = new project1.Strategy.JpgStrategy();
+                    break;
+                case ".bmp":
+                    saveStrategy = new project1.Strategy.BmpStrategy();
+                    break;
+                case ".png":
+                    saveStrategy = new project1.Strategy.PngStrategy();
+                    break;
+                case ".gif":
+                    saveStrategy = new project1.Strategy.GifStrategy();
+                    break;
+
+                default:
+                    goto case ".bmp";
+            }
+            saveStrategy.SaveImage(ProfilePicture.Image, dlg.FileName);
+        }
     }
 }
+
