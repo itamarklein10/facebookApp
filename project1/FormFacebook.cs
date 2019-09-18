@@ -5,12 +5,17 @@ using System.Threading;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
 using System.IO;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace project1
 {
     public partial class FormFacebook : Form
     {
         public User m_LoggedInUser { get; set; }
+        public IEnumerator<string> m_PhotoUrlEnumerator;
+        private readonly List<PictureBox> r_PictureArray;
+
 
         public FormFacebook()
         {
@@ -355,18 +360,25 @@ namespace project1
         {
             if (checkedListBox1.CheckedItems.Count != 0)
             {
-                // If so, loop through all checked items and print results.  
                 string s = "";
-                for (int x = 0; x < checkedListBox1.CheckedItems.Count; x++)
+                for (int i = 0; i < checkedListBox1.CheckedItems.Count; i++)
                 {
 
-                    s = s + "Checked Item " + (x + 1).ToString() + " = " + checkedListBox1.CheckedItems[x].ToString() + "\n";
+                    s = s + "Checked Item " + (i + 1).ToString() + " = " + checkedListBox1.CheckedItems[i].ToString() + "\n";
                 }
-          
+
             }
         }
 
+        private void ShowRandomPhotolinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FacebookFeatures.ShowSwitchesImage(this, m_LoggedInUser);
+        }
 
+        private void RandomPhotoPictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

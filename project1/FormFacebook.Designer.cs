@@ -63,6 +63,8 @@ namespace project1
             this.SaveProfielPicturebutton = new System.Windows.Forms.Button();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.ShowRandomPhotolinkLabel = new System.Windows.Forms.LinkLabel();
+            this.RandomPhotoPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FriendPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FriendByStatusPictureBox)).BeginInit();
@@ -70,6 +72,7 @@ namespace project1
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FacebookLogoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RandomPhotoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // loginButton
@@ -182,7 +185,7 @@ namespace project1
             // 
             // StatusTextBox
             // 
-            this.StatusTextBox.Location = new System.Drawing.Point(246, 98);
+            this.StatusTextBox.Location = new System.Drawing.Point(342, 60);
             this.StatusTextBox.Name = "StatusTextBox";
             this.StatusTextBox.Size = new System.Drawing.Size(165, 20);
             this.StatusTextBox.TabIndex = 15;
@@ -200,7 +203,7 @@ namespace project1
             // statusButton
             // 
             this.statusButton.Enabled = false;
-            this.statusButton.Location = new System.Drawing.Point(165, 96);
+            this.statusButton.Location = new System.Drawing.Point(402, 16);
             this.statusButton.Name = "statusButton";
             this.statusButton.Size = new System.Drawing.Size(75, 23);
             this.statusButton.TabIndex = 17;
@@ -344,6 +347,15 @@ namespace project1
             this.declineButton.UseVisualStyleBackColor = true;
             this.declineButton.Click += new System.EventHandler(this.RemoveEvent_Click);
             // 
+            // SaveProfielPicturebutton
+            // 
+            this.SaveProfielPicturebutton.Location = new System.Drawing.Point(38, 186);
+            this.SaveProfielPicturebutton.Name = "SaveProfielPicturebutton";
+            this.SaveProfielPicturebutton.Size = new System.Drawing.Size(75, 23);
+            this.SaveProfielPicturebutton.TabIndex = 0;
+            this.SaveProfielPicturebutton.Text = "Save image";
+            this.SaveProfielPicturebutton.Click += new System.EventHandler(this.SaveProfielPictureButton_Click);
+            // 
             // checkedListBox1
             // 
             this.checkedListBox1.FormattingEnabled = true;
@@ -355,22 +367,42 @@ namespace project1
             "show friends by status",
             "fetch events",
             "fetch pages"});
-            this.checkedListBox1.Location = new System.Drawing.Point(238, 158);
+            this.checkedListBox1.Location = new System.Drawing.Point(146, 111);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(218, 151);
+            this.checkedListBox1.Size = new System.Drawing.Size(218, 109);
             this.checkedListBox1.TabIndex = 33;
             this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(244, 109);
+            this.label1.Location = new System.Drawing.Point(156, 78);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 40);
+            this.label1.Size = new System.Drawing.Size(143, 26);
             this.label1.TabIndex = 34;
             this.label1.Text = "please choose what features\r\n do you want upon login";
             // 
-            // FormFacebook
+            // ShowRandomPhotolinkLabel
+            // 
+            this.ShowRandomPhotolinkLabel.AutoSize = true;
+            this.ShowRandomPhotolinkLabel.BackColor = System.Drawing.Color.LightCyan;
+            this.ShowRandomPhotolinkLabel.LinkColor = System.Drawing.Color.Navy;
+            this.ShowRandomPhotolinkLabel.Location = new System.Drawing.Point(850, 115);
+            this.ShowRandomPhotolinkLabel.Name = "ShowRandomPhotolinkLabel";
+            this.ShowRandomPhotolinkLabel.Size = new System.Drawing.Size(111, 26);
+            this.ShowRandomPhotolinkLabel.TabIndex = 35;
+            this.ShowRandomPhotolinkLabel.TabStop = true;
+            this.ShowRandomPhotolinkLabel.Text = "Show a random photo\r\nfrom my albums";
+            this.ShowRandomPhotolinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ShowRandomPhotolinkLabel_LinkClicked);
+            // 
+            // RandomPhotoPictureBox
+            // 
+            this.RandomPhotoPictureBox.Location = new System.Drawing.Point(853, 144);
+            this.RandomPhotoPictureBox.Name = "RandomPhotoPictureBox";
+            this.RandomPhotoPictureBox.Size = new System.Drawing.Size(113, 112);
+            this.RandomPhotoPictureBox.TabIndex = 36;
+            this.RandomPhotoPictureBox.TabStop = false;
+            this.RandomPhotoPictureBox.Click += new System.EventHandler(this.RandomPhotoPictureBox_Click);
             // 
             // FormFacebook
             // 
@@ -378,8 +410,9 @@ namespace project1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.ClientSize = new System.Drawing.Size(992, 473);
-            this.Controls.Add(this.SaveProfielPicturebutton);
+            this.ClientSize = new System.Drawing.Size(1003, 473);
+            this.Controls.Add(this.RandomPhotoPictureBox);
+            this.Controls.Add(this.ShowRandomPhotolinkLabel);
             this.Controls.Add(this.declineButton);
             this.Controls.Add(this.fetchEverythingCheckBox);
             this.Controls.Add(this.rememberMeButton);
@@ -403,7 +436,10 @@ namespace project1
             this.Controls.Add(this.birthdayButton);
             this.Controls.Add(this.pageButton);
             this.Controls.Add(this.FriendsButton);
+            this.Controls.Add(this.SaveProfielPicturebutton);
             this.Controls.Add(this.loginButton);
+            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
@@ -419,6 +455,7 @@ namespace project1
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FacebookLogoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RandomPhotoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -460,5 +497,9 @@ namespace project1
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Button declineButton;
         private System.Windows.Forms.Button SaveProfielPicturebutton;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.Label label1;
+        internal System.Windows.Forms.LinkLabel ShowRandomPhotolinkLabel;
+        internal System.Windows.Forms.PictureBox RandomPhotoPictureBox;
     }
 }

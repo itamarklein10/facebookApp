@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
 
@@ -9,6 +10,34 @@ namespace project1
 {
     public class FacebookFeatures
     {
+        public static void ShowSwitchesImage(FormFacebook i_FacebookForm , User i_LoggedInUser)
+        {
+            if (i_FacebookForm.m_PhotoUrlEnumerator == null)
+            {  
+                PhotosIterator latestPhotos = new PhotosIterator(i_LoggedInUser.Albums);
+                i_FacebookForm.m_PhotoUrlEnumerator = latestPhotos.GetEnumerator();
+            }
+
+            if (i_FacebookForm.m_PhotoUrlEnumerator.MoveNext())
+            {
+                i_FacebookForm.RandomPhotoPictureBox.LoadAsync(i_FacebookForm.m_PhotoUrlEnumerator.Current);
+            }
+
+            //new Thread(() =>
+            //{
+            //    / This line will invoke a time - consuming fetch, so it should not be executed on the UI thread:
+            //    var statuses = m_LoggedInUser.Statuses;
+
+            //    this.Invoke(new Action(() =>
+            //    {
+            //        picture_smallPictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL);
+            //        if (statuses.Count > 0)
+            //        {
+            //            textBoxStatus.Text = statuses[0].Message;
+            //        }
+            //    }));
+            //}).Start();
+        }
         public static void DisplayEvents(FormFacebook i_FacebookForm, User i_LoggedInUser)
         {
             i_FacebookForm.EventsListBox.Items.Clear();
