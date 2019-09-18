@@ -387,9 +387,10 @@ namespace project1
             this.Label1.AutoSize = true;
             this.Label1.Location = new System.Drawing.Point(156, 78);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(143, 26);
+            this.Label1.Size = new System.Drawing.Size(112, 26);
             this.Label1.TabIndex = 34;
-            this.Label1.Text = "please choose what features\r\n do you want upon login";
+            this.Label1.Text = "please choose what\r\nFeatures do you want \r\n";
+            this.Label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // ShowRandomPhotolinkLabel
             // 
