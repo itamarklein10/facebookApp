@@ -14,9 +14,7 @@ namespace project1
     {
         public User m_LoggedInUser { get; set; }
         public IEnumerator<string> m_PhotoUrlEnumerator;
-        private readonly List<PictureBox> r_PictureArray;
-
-
+      
         public FormFacebook()
         {
             InitializeComponent();
@@ -74,6 +72,7 @@ namespace project1
             statusButton.Enabled = true;
             showFriendByStatusLinkedLabel.Enabled = true;
             ShowRandomPhotolinkLabel.Enabled = true;
+            SaveProfielPicturebutton.Enabled = true;
         }
 
         private void AutoLogin()
