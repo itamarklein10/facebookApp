@@ -327,8 +327,10 @@ namespace project1
 
         private void SaveProfielPictureButton_Click(object sender, EventArgs e)
         {
-            SaveFileDialog dlg = new SaveFileDialog();
-            dlg.Filter = "Image Files (*.bmp , *.jpg, *.png, *.gif)|*.bmp;*.jpg*.png;*.gif";
+            SaveFileDialog dlg = new SaveFileDialog
+            {
+                Filter = "Image Files (*.bmp , *.jpg, *.png, *.gif)|*.bmp;*.jpg*.png;*.gif"
+            };
 
             if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.Cancel) { return; }
 
