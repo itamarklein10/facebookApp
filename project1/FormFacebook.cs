@@ -375,35 +375,30 @@ namespace project1
         {
             if (checkedListBox1.CheckedItems.Count != 0)
             {
-                for (int i = 0; i < checkedListBox1.CheckedItems.Count; i++)
+                switch (checkedListBox1.SelectedItem.ToString())
                 {
-                    switch (checkedListBox1.SelectedItem.ToString())
-                    {
-                        case "fetch friends":
-                            DisplayFriends();
-                            break;
-                        case "fetch events":
-                            FacebookFeatures.DisplayEvents(this, m_LoggedInUser);
-                            break;
-                        case "fetch today birthdays":
-                            FacebookFeatures.DisplayTodaysBirthdays(m_LoggedInUser, this);
-                            break;
-                        case "post status":
-                            FacebookFeatures.StatusPost(this, m_LoggedInUser, StatusTextBox);
-                            break;
-                        case "show friends by status":
-                            FacebookFeatures.DisplayFriendByStatusAndGender(this, m_LoggedInUser);
-                            break;
-                        case "fetch pages":
-                            FacebookFeatures.DisplayPages(this, m_LoggedInUser);
-                            break;
-                        case "show a random photo":
-                            FacebookFeatures.ShowSwitchesImage(this, m_LoggedInUser);
-                            break;
-
-                    }
+                    case "fetch friends":
+                        DisplayFriends();
+                        break;
+                    case "fetch events":
+                        FacebookFeatures.DisplayEvents(this, m_LoggedInUser);
+                        break;
+                    case "fetch today birthdays":
+                        FacebookFeatures.DisplayTodaysBirthdays(m_LoggedInUser, this);
+                        break;
+                    case "post status":
+                        FacebookFeatures.StatusPost(this, m_LoggedInUser, StatusTextBox);
+                        break;
+                    case "show friends by status":
+                        FacebookFeatures.DisplayFriendByStatusAndGender(this, m_LoggedInUser);
+                        break;
+                    case "fetch pages":
+                        FacebookFeatures.DisplayPages(this, m_LoggedInUser);
+                        break;
+                    case "show a random photo":
+                        FacebookFeatures.ShowSwitchesImage(this, m_LoggedInUser);
+                        break;
                 }
-                              
             }
         }
 
