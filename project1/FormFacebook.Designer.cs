@@ -349,11 +349,13 @@ namespace project1
             // 
             // SaveProfielPicturebutton
             // 
+            this.SaveProfielPicturebutton.Enabled = false;
             this.SaveProfielPicturebutton.Location = new System.Drawing.Point(38, 186);
             this.SaveProfielPicturebutton.Name = "SaveProfielPicturebutton";
             this.SaveProfielPicturebutton.Size = new System.Drawing.Size(75, 23);
             this.SaveProfielPicturebutton.TabIndex = 0;
             this.SaveProfielPicturebutton.Text = "Save image";
+            this.SaveProfielPicturebutton.UseVisualStyleBackColor = true;
             this.SaveProfielPicturebutton.Click += new System.EventHandler(this.SaveProfielPictureButton_Click);
             // 
             // checkedListBox1
@@ -464,7 +466,7 @@ namespace project1
 
         private void RememberMeButton_CheckedChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         #endregion
