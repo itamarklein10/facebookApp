@@ -404,6 +404,9 @@ namespace project1
             this.Controls.Add(this.pageButton);
             this.Controls.Add(this.FriendsButton);
             this.Controls.Add(this.loginButton);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.checkedListBox1);
+
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
@@ -459,6 +462,8 @@ namespace project1
         private System.Windows.Forms.CheckBox fetchEverythingCheckBox;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Button declineButton;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button SaveProfielPicturebutton;
     }
 }
