@@ -152,6 +152,7 @@ namespace project1
                     statusButton.Enabled = true;
                     showFriendByStatusLinkedLabel.Enabled = true;
                     ShowRandomPhotolinkLabel.Enabled = true;
+                    SaveProfielPicturebutton.Enabled = true;
                 }));
             }).Start();
         }
@@ -392,7 +393,7 @@ namespace project1
             timer1.Tick += new EventHandler(timer1_Tick);
             timer1.Interval = 3000; // in miliseconds
             timer1.Start();
-       
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
