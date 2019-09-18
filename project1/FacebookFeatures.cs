@@ -22,6 +22,10 @@ namespace project1
             {
                 i_FacebookForm.RandomPhotoPictureBox.LoadAsync(i_FacebookForm.m_PhotoUrlEnumerator.Current);
             }
+            else
+            {
+                i_FacebookForm.m_PhotoUrlEnumerator.Reset();
+            }
 
             //new Thread(() =>
             //{
