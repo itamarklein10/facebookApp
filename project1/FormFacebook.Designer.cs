@@ -500,8 +500,6 @@ namespace project1
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button SaveProfielPicturebutton;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.Label label1;
         internal System.Windows.Forms.LinkLabel ShowRandomPhotolinkLabel;
         internal System.Windows.Forms.PictureBox RandomPhotoPictureBox;
     }

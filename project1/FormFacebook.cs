@@ -14,8 +14,7 @@ namespace project1
     {
         public User m_LoggedInUser { get; set; }
         public IEnumerator<string> m_PhotoUrlEnumerator;
-        private readonly List<PictureBox> r_PictureArray;
-
+        private System.Windows.Forms.Timer timer1;
 
         public FormFacebook()
         {
@@ -139,6 +138,19 @@ namespace project1
                 this.Invoke(new Action(() =>
                 {
                     ProfilePicture.LoadAsync(m_LoggedInUser.PictureNormalURL);
+
+                    loginButton.Enabled = false;
+                    birthdayButton.Enabled = true;
+                    FriendsButton.Enabled = true;
+                    singleFriendButton.Enabled = true;
+                    marriedFriendsButton.Enabled = true;
+                    maleButton.Enabled = true;
+                    femaleButton.Enabled = true;
+                    pageButton.Enabled = true;
+                    eventsButton.Enabled = true;
+                    statusButton.Enabled = true;
+                    showFriendByStatusLinkedLabel.Enabled = true;
+                    ShowRandomPhotolinkLabel.Enabled = true;
                 }));
             }).Start();
         }
@@ -375,7 +387,17 @@ namespace project1
 
         private void ShowRandomPhotolinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            timer1 = new System.Windows.Forms.Timer();
+            timer1.Tick += new EventHandler(timer1_Tick);
+            timer1.Interval = 3000; // in miliseconds
+            timer1.Start();
+       
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
             FacebookFeatures.ShowSwitchesImage(this, m_LoggedInUser);
+
         }
 
         private void RandomPhotoPictureBox_Click(object sender, EventArgs e)

@@ -27,20 +27,7 @@ namespace project1
                 i_FacebookForm.m_PhotoUrlEnumerator.Reset();
             }
 
-            //new Thread(() =>
-            //{
-            //    / This line will invoke a time - consuming fetch, so it should not be executed on the UI thread:
-            //    var statuses = m_LoggedInUser.Statuses;
-
-            //    this.Invoke(new Action(() =>
-            //    {
-            //        picture_smallPictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL);
-            //        if (statuses.Count > 0)
-            //        {
-            //            textBoxStatus.Text = statuses[0].Message;
-            //        }
-            //    }));
-            //}).Start();
+            
         }
         public static void DisplayEvents(FormFacebook i_FacebookForm, User i_LoggedInUser)
         {
