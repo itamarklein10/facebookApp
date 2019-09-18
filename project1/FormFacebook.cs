@@ -12,7 +12,7 @@ namespace project1
     public partial class FormFacebook : Form
     {
         public User m_LoggedInUser { get; set; }
-
+        private NotifyFriends m_NotifyImportantFriends=new NotifyFriends();
         public IEnumerator<string> m_PhotoUrlEnumerator;
         private System.Windows.Forms.Timer timer1;
 
@@ -75,6 +75,10 @@ namespace project1
             ShowRandomPhotolinkLabel.Enabled = true;
             SaveProfilePicturebutton.Enabled = true;
             checkedListBox1.Enabled = true;
+            UpdateFriendButton.Enabled = true;
+            SendButton.Enabled = true;
+            MessageTextBox.Enabled = true;
+            StatusTextBox.Enabled = true;
         }
 
         private void AutoLogin()
@@ -155,6 +159,11 @@ namespace project1
                     ShowRandomPhotolinkLabel.Enabled = true;
                     SaveProfilePicturebutton.Enabled = true;
                     checkedListBox1.Enabled = true;
+                    UpdateFriendButton.Enabled = true;
+                    SendButton.Enabled = true;
+                    MessageTextBox.Enabled = true;
+                    StatusTextBox.Enabled = true;
+
                 }));
             }).Start();
         }
@@ -439,6 +448,30 @@ namespace project1
                 timer1.Stop();
                 ChangeStatebutton.Text = "Continue";
             }
+        }
+
+        private void UpdadeFriendButton_Click(object sender, EventArgs e)
+        {
+            if (FriendsListBox.SelectedItems.Count == 1)
+            {
+                User selected = FriendsListBox.SelectedItem as User;
+                m_NotifyImportantFriends.m_MessageFollowersDelegates += (string Message) => selected.PostStatus(Message);
+            }
+        }
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SendButton_Click(object sender, EventArgs e)
+        {
+
+            m_NotifyImportantFriends.NotifyAll(MessageTextBox.Text);
+        }
+
+        private void MessageTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

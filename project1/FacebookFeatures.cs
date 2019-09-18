@@ -25,6 +25,7 @@ namespace project1
             else
             {
                 i_FacebookForm.m_PhotoUrlEnumerator.Reset();
+                i_FacebookForm.m_PhotoUrlEnumerator.MoveNext();
             }
         }
 

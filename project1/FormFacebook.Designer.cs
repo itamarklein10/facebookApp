@@ -66,6 +66,10 @@ namespace project1
             this.ShowRandomPhotolinkLabel = new System.Windows.Forms.LinkLabel();
             this.RandomPhotoPictureBox = new System.Windows.Forms.PictureBox();
             this.ChangeStatebutton = new System.Windows.Forms.Button();
+            this.UpdateFriendButton = new System.Windows.Forms.Button();
+            this.MessageTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.SendButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FriendPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FriendByStatusPictureBox)).BeginInit();
@@ -186,6 +190,7 @@ namespace project1
             // 
             // StatusTextBox
             // 
+            this.StatusTextBox.Enabled = false;
             this.StatusTextBox.Location = new System.Drawing.Point(342, 60);
             this.StatusTextBox.Name = "StatusTextBox";
             this.StatusTextBox.Size = new System.Drawing.Size(165, 20);
@@ -421,13 +426,58 @@ namespace project1
             this.ChangeStatebutton.Visible = false;
             this.ChangeStatebutton.Click += new System.EventHandler(this.button1_Click);
             // 
+            // UpdateFriendButton
+            // 
+            this.UpdateFriendButton.Enabled = false;
+            this.UpdateFriendButton.Location = new System.Drawing.Point(146, 421);
+            this.UpdateFriendButton.Name = "UpdateFriendButton";
+            this.UpdateFriendButton.Size = new System.Drawing.Size(80, 33);
+            this.UpdateFriendButton.TabIndex = 38;
+            this.UpdateFriendButton.Text = "Update friend";
+            this.UpdateFriendButton.UseVisualStyleBackColor = true;
+            this.UpdateFriendButton.Click += new System.EventHandler(this.UpdadeFriendButton_Click);
+            // 
+            // MessageTextBox
+            // 
+            this.MessageTextBox.Enabled = false;
+            this.MessageTextBox.Location = new System.Drawing.Point(21, 494);
+            this.MessageTextBox.Name = "MessageTextBox";
+            this.MessageTextBox.Size = new System.Drawing.Size(311, 20);
+            this.MessageTextBox.TabIndex = 39;
+            this.MessageTextBox.TextChanged += new System.EventHandler(this.MessageTextBox_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 478);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(204, 13);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Send a message to your important friends:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // SendButton
+            // 
+            this.SendButton.Enabled = false;
+            this.SendButton.Location = new System.Drawing.Point(338, 494);
+            this.SendButton.Name = "SendButton";
+            this.SendButton.Size = new System.Drawing.Size(48, 20);
+            this.SendButton.TabIndex = 41;
+            this.SendButton.Text = "send";
+            this.SendButton.UseVisualStyleBackColor = true;
+            this.SendButton.Click += new System.EventHandler(this.SendButton_Click);
+            // 
             // FormFacebook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.ClientSize = new System.Drawing.Size(1003, 473);
+            this.ClientSize = new System.Drawing.Size(1003, 537);
+            this.Controls.Add(this.SendButton);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.MessageTextBox);
+            this.Controls.Add(this.UpdateFriendButton);
             this.Controls.Add(this.ChangeStatebutton);
             this.Controls.Add(this.RandomPhotoPictureBox);
             this.Controls.Add(this.ShowRandomPhotolinkLabel);
@@ -520,5 +570,9 @@ namespace project1
         internal System.Windows.Forms.LinkLabel ShowRandomPhotolinkLabel;
         internal System.Windows.Forms.PictureBox RandomPhotoPictureBox;
         internal System.Windows.Forms.Button ChangeStatebutton;
+        internal System.Windows.Forms.Button UpdateFriendButton;
+        internal System.Windows.Forms.TextBox MessageTextBox;
+        private System.Windows.Forms.Label label2;
+        internal System.Windows.Forms.Button SendButton;
     }
 }
