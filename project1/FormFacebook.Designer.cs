@@ -65,6 +65,7 @@ namespace project1
             this.label1 = new System.Windows.Forms.Label();
             this.ShowRandomPhotolinkLabel = new System.Windows.Forms.LinkLabel();
             this.RandomPhotoPictureBox = new System.Windows.Forms.PictureBox();
+            this.ChangeStatebutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FriendPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FriendByStatusPictureBox)).BeginInit();
@@ -407,6 +408,18 @@ namespace project1
             this.RandomPhotoPictureBox.TabStop = false;
             this.RandomPhotoPictureBox.Click += new System.EventHandler(this.RandomPhotoPictureBox_Click);
             // 
+            // ChangeStatebutton
+            // 
+            this.ChangeStatebutton.Enabled = false;
+            this.ChangeStatebutton.Location = new System.Drawing.Point(853, 118);
+            this.ChangeStatebutton.Name = "ChangeStatebutton";
+            this.ChangeStatebutton.Size = new System.Drawing.Size(75, 23);
+            this.ChangeStatebutton.TabIndex = 37;
+            this.ChangeStatebutton.Text = "Stop";
+            this.ChangeStatebutton.UseVisualStyleBackColor = true;
+            this.ChangeStatebutton.Visible = false;
+            this.ChangeStatebutton.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormFacebook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -414,6 +427,7 @@ namespace project1
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(1003, 473);
+            this.Controls.Add(this.ChangeStatebutton);
             this.Controls.Add(this.RandomPhotoPictureBox);
             this.Controls.Add(this.ShowRandomPhotolinkLabel);
             this.Controls.Add(this.declineButton);
@@ -504,5 +518,6 @@ namespace project1
         private System.Windows.Forms.Button SaveProfielPicturebutton;
         internal System.Windows.Forms.LinkLabel ShowRandomPhotolinkLabel;
         internal System.Windows.Forms.PictureBox RandomPhotoPictureBox;
+        internal System.Windows.Forms.Button ChangeStatebutton;
     }
 }

@@ -392,7 +392,9 @@ namespace project1
             timer1.Tick += new EventHandler(timer1_Tick);
             timer1.Interval = 3000; // in miliseconds
             timer1.Start();
-       
+            ChangeStatebutton.Visible = true;
+            ChangeStatebutton.Enabled = true;
+            ShowRandomPhotolinkLabel.Visible = false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -404,6 +406,20 @@ namespace project1
         private void RandomPhotoPictureBox_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(ChangeStatebutton.Text == "Continue")
+            {
+                timer1.Start();
+                ChangeStatebutton.Text = "Stop";
+            }
+            else
+            {
+                timer1.Stop();
+                ChangeStatebutton.Text = "Continue";
+            }
         }
     }
 }
