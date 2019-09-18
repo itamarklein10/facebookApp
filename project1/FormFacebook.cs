@@ -2,17 +2,17 @@
 using System.Windows.Forms;
 using System.ComponentModel;
 using System.Threading;
+using System.IO;
+using System.Collections.Generic;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
-using System.IO;
-using System.Linq;
-using System.Collections.Generic;
 
 namespace project1
 {
     public partial class FormFacebook : Form
     {
         public User m_LoggedInUser { get; set; }
+
         public IEnumerator<string> m_PhotoUrlEnumerator;
         private System.Windows.Forms.Timer timer1;
 
@@ -62,18 +62,19 @@ namespace project1
             }
 
             loginButton.Enabled = false;
-            birthdayButton.Enabled = true;
+            BirthdayButton.Enabled = true;
             FriendsButton.Enabled = true;
-            singleFriendButton.Enabled = true;
-            marriedFriendsButton.Enabled = true;
-            maleButton.Enabled = true;
-            femaleButton.Enabled = true;
-            pageButton.Enabled = true;
-            eventsButton.Enabled = true;
-            statusButton.Enabled = true;
-            showFriendByStatusLinkedLabel.Enabled = true;
+            SingleFriendButton.Enabled = true;
+            MarriedFriendsButton.Enabled = true;
+            MaleButton.Enabled = true;
+            FemaleButton.Enabled = true;
+            PageButton.Enabled = true;
+            EventsButton.Enabled = true;
+            StatusButton.Enabled = true;
+            ShowFriendByStatusLinkedLabel.Enabled = true;
             ShowRandomPhotolinkLabel.Enabled = true;
             SaveProfilePicturebutton.Enabled = true;
+            checkedListBox1.Enabled = true;
         }
 
         private void AutoLogin()
@@ -141,18 +142,19 @@ namespace project1
                     ProfilePicture.LoadAsync(m_LoggedInUser.PictureNormalURL);
 
                     loginButton.Enabled = false;
-                    birthdayButton.Enabled = true;
+                    BirthdayButton.Enabled = true;
                     FriendsButton.Enabled = true;
-                    singleFriendButton.Enabled = true;
-                    marriedFriendsButton.Enabled = true;
-                    maleButton.Enabled = true;
-                    femaleButton.Enabled = true;
-                    pageButton.Enabled = true;
-                    eventsButton.Enabled = true;
-                    statusButton.Enabled = true;
-                    showFriendByStatusLinkedLabel.Enabled = true;
+                    SingleFriendButton.Enabled = true;
+                    MarriedFriendsButton.Enabled = true;
+                    MaleButton.Enabled = true;
+                    FemaleButton.Enabled = true;
+                    PageButton.Enabled = true;
+                    EventsButton.Enabled = true;
+                    StatusButton.Enabled = true;
+                    ShowFriendByStatusLinkedLabel.Enabled = true;
                     ShowRandomPhotolinkLabel.Enabled = true;
                     SaveProfilePicturebutton.Enabled = true;
+                    checkedListBox1.Enabled = true;
                 }));
             }).Start();
         }
@@ -200,15 +202,7 @@ namespace project1
 
         private void StatusButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Status postedStatus = m_LoggedInUser.PostStatus(StatusTextBox.Text);
-                MessageBox.Show("Status Posted! ID: " + postedStatus.Id);
-            }
-            catch (Facebook.FacebookOAuthException)
-            {
-                MessageBox.Show("feature unavailable because of facebook");
-            }
+            FacebookFeatures.StatusPost(this, m_LoggedInUser, StatusTextBox);
         }
 
         private void LikesLabel_Click(object sender, EventArgs e)
@@ -281,8 +275,8 @@ namespace project1
         private void ShowFriendByStatusLinkedLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FacebookFeatures.DisplayFriendByStatusAndGender(this, m_LoggedInUser);
-            maleButton.Checked = true;
-            singleFriendButton.Checked = true;
+            MaleButton.Checked = true;
+            SingleFriendButton.Checked = true;
         }
 
         private void GroupBox1_Enter(object sender, EventArgs e)
@@ -291,7 +285,6 @@ namespace project1
 
         private void MaleButton_CheckedChanged(object sender, EventArgs e)
         {
-
         }
 
         private void FemaleButton_CheckedChanged(object sender, EventArgs e)
@@ -323,18 +316,19 @@ namespace project1
             EventsListBox.Invoke(new Action(
             () =>
       {
-
           if (EventsListBox.SelectedItems.Count == 1)
           {
               Event selectedEvent = EventsListBox.SelectedItem as Event;
               selectedEvent.DeclinedUsers.Add(m_LoggedInUser);
               EventsListBox.SelectedItems.Remove(selectedEvent);
           }
+
           if (EventsListBox.SelectedItems.Count == 0)
           {
               MessageBox.Show("no event was picked");
           }
       }
+
       )
       );
         }
@@ -346,30 +340,34 @@ namespace project1
                 Filter = "Image Files (*.bmp , *.jpg, *.png, *.gif)|*.bmp;*.jpg*.png;*.gif"
             };
 
-            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.Cancel) { return; }
+            if (dlg.ShowDialog() == DialogResult.Cancel)
+            {
+                return;
+            }
 
-            project1.Strategy.IImageSaveStrategy saveStrategy;
+            Strategy.IImageSaveStrategy saveStrategy;
 
             var extension = Path.GetExtension(dlg.FileName);
 
             switch (extension.ToLower())
             {
                 case ".jpg":
-                    saveStrategy = new project1.Strategy.JpgStrategy();
+                    saveStrategy = new Strategy.JpgStrategy();
                     break;
                 case ".bmp":
-                    saveStrategy = new project1.Strategy.BmpStrategy();
+                    saveStrategy = new Strategy.BmpStrategy();
                     break;
                 case ".png":
-                    saveStrategy = new project1.Strategy.PngStrategy();
+                    saveStrategy = new Strategy.PngStrategy();
                     break;
                 case ".gif":
-                    saveStrategy = new project1.Strategy.GifStrategy();
+                    saveStrategy = new Strategy.GifStrategy();
                     break;
 
                 default:
                     goto case ".bmp";
             }
+
             saveStrategy.SaveImage(ProfilePicture.Image, dlg.FileName);
         }
 
@@ -377,35 +375,53 @@ namespace project1
         {
             if (checkedListBox1.CheckedItems.Count != 0)
             {
-                string s = "";
                 for (int i = 0; i < checkedListBox1.CheckedItems.Count; i++)
                 {
-                    s = s + "Checked Item " + (i + 1).ToString() + " = " + checkedListBox1.CheckedItems[i].ToString() + "\n";
-                    
+                    switch (checkedListBox1.SelectedItem.ToString())
+                    {
+                        case "fetch friends":
+                            DisplayFriends();
+                            break;
+                        case "fetch events":
+                            FacebookFeatures.DisplayEvents(this, m_LoggedInUser);
+                            break;
+                        case "fetch today birthdays":
+                            FacebookFeatures.DisplayTodaysBirthdays(m_LoggedInUser, this);
+                            break;
+                        case "post status":
+                            FacebookFeatures.StatusPost(this, m_LoggedInUser, StatusTextBox);
+                            break;
+                        case "show friends by status":
+                            FacebookFeatures.DisplayFriendByStatusAndGender(this, m_LoggedInUser);
+                            break;
+                        case "fetch pages":
+                            FacebookFeatures.DisplayPages(this, m_LoggedInUser);
+                            break;
+                        case "show a random photo":
+                            FacebookFeatures.ShowSwitchesImage(this, m_LoggedInUser);
+                            break;
+
+                    }
                 }
-                MessageBox.Show(s);
+                              
             }
         }
 
         private void ShowRandomPhotolinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             timer1 = new System.Windows.Forms.Timer();
-            timer1.Tick += new EventHandler(timer1_Tick);
+            timer1.Tick += new EventHandler(Timer1_Tick);
             timer1.Interval = 3000; // in miliseconds
             timer1.Start();
-
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
             FacebookFeatures.ShowSwitchesImage(this, m_LoggedInUser);
-
         }
 
         private void RandomPhotoPictureBox_Click(object sender, EventArgs e)
         {
-
         }
     }
 }
-

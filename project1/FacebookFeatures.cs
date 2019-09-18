@@ -10,10 +10,10 @@ namespace project1
 {
     public class FacebookFeatures
     {
-        public static void ShowSwitchesImage(FormFacebook i_FacebookForm , User i_LoggedInUser)
+        public static void ShowSwitchesImage(FormFacebook i_FacebookForm, User i_LoggedInUser)
         {
             if (i_FacebookForm.m_PhotoUrlEnumerator == null)
-            {  
+            {
                 PhotosIterator latestPhotos = new PhotosIterator(i_LoggedInUser.Albums);
                 i_FacebookForm.m_PhotoUrlEnumerator = latestPhotos.GetEnumerator();
             }
@@ -26,9 +26,8 @@ namespace project1
             {
                 i_FacebookForm.m_PhotoUrlEnumerator.Reset();
             }
-
-            
         }
+
         public static void DisplayEvents(FormFacebook i_FacebookForm, User i_LoggedInUser)
         {
             i_FacebookForm.EventsListBox.Items.Clear();
@@ -86,7 +85,19 @@ namespace project1
                 {
                     i_FacebookForm.ProfilePicture.Image = i_FacebookForm.ProfilePicture.ErrorImage;
                 }
-                
+            }
+        }
+
+        public static void StatusPost(FormFacebook i_FacebookForm,User i_LoggedInUser,TextBox i_StatusTextBox)
+        {
+            try
+            {
+                Status postedStatus = i_LoggedInUser.PostStatus(i_StatusTextBox.Text);
+                MessageBox.Show("Status Posted! ID: " + postedStatus.Id);
+            }
+            catch (Facebook.FacebookOAuthException)
+            {
+                MessageBox.Show("feature unavailable because of facebook");
             }
         }
 
@@ -129,9 +140,9 @@ namespace project1
             i_FacebookForm.FriendsByStatusListBox.Items.Clear();
             i_FacebookForm.FriendsByStatusListBox.DisplayMember = "Name";
 
-            bool isMale = i_FacebookForm.maleButton.Checked == true;
-            bool isMarried = i_FacebookForm.marriedFriendsButton.Checked == true;
-            bool isSingle = i_FacebookForm.singleFriendButton.Checked == true;
+            bool isMale = i_FacebookForm.MaleButton.Checked == true;
+            bool isMarried = i_FacebookForm.MarriedFriendsButton.Checked == true;
+            bool isSingle = i_FacebookForm.SingleFriendButton.Checked == true;
             User.eRelationshipStatus e_UserStatus;
             User.eGender e_UserGender;
             try
