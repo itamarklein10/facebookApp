@@ -73,6 +73,7 @@ namespace project1
             eventsButton.Enabled = true;
             statusButton.Enabled = true;
             showFriendByStatusLinkedLabel.Enabled = true;
+            ShowRandomPhotolinkLabel.Enabled = true;
         }
 
         private void AutoLogin()

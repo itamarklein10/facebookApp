@@ -386,6 +386,7 @@ namespace project1
             // 
             this.ShowRandomPhotolinkLabel.AutoSize = true;
             this.ShowRandomPhotolinkLabel.BackColor = System.Drawing.Color.LightCyan;
+            this.ShowRandomPhotolinkLabel.Enabled = false;
             this.ShowRandomPhotolinkLabel.LinkColor = System.Drawing.Color.Navy;
             this.ShowRandomPhotolinkLabel.Location = new System.Drawing.Point(850, 115);
             this.ShowRandomPhotolinkLabel.Name = "ShowRandomPhotolinkLabel";

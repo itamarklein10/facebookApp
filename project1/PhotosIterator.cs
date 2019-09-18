@@ -29,13 +29,5 @@ namespace project1
                 }
             }
         }
-
-        //public IEnumerator<string> GetEnumerator()
-        //{
-        //    return (from album in r_AllPhotos
-        //            from photo in album.Photos
-        //            select photo.PictureThumbURL)
-        //            .GetEnumerator();
-        //}
     }
 }
