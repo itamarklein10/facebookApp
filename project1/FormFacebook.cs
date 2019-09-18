@@ -73,7 +73,7 @@ namespace project1
             statusButton.Enabled = true;
             showFriendByStatusLinkedLabel.Enabled = true;
             ShowRandomPhotolinkLabel.Enabled = true;
-            SaveProfielPicturebutton.Enabled = true;
+            SaveProfilePicturebutton.Enabled = true;
         }
 
         private void AutoLogin()
@@ -152,7 +152,7 @@ namespace project1
                     statusButton.Enabled = true;
                     showFriendByStatusLinkedLabel.Enabled = true;
                     ShowRandomPhotolinkLabel.Enabled = true;
-                    SaveProfielPicturebutton.Enabled = true;
+                    SaveProfilePicturebutton.Enabled = true;
                 }));
             }).Start();
         }
@@ -380,10 +380,10 @@ namespace project1
                 string s = "";
                 for (int i = 0; i < checkedListBox1.CheckedItems.Count; i++)
                 {
-
                     s = s + "Checked Item " + (i + 1).ToString() + " = " + checkedListBox1.CheckedItems[i].ToString() + "\n";
+                    
                 }
-
+                MessageBox.Show(s);
             }
         }
 

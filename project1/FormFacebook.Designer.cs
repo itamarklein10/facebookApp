@@ -60,7 +60,7 @@ namespace project1
             this.fetchEverythingCheckBox = new System.Windows.Forms.CheckBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.declineButton = new System.Windows.Forms.Button();
-            this.SaveProfielPicturebutton = new System.Windows.Forms.Button();
+            this.SaveProfilePicturebutton = new System.Windows.Forms.Button();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ShowRandomPhotolinkLabel = new System.Windows.Forms.LinkLabel();
@@ -203,7 +203,7 @@ namespace project1
             // statusButton
             // 
             this.statusButton.Enabled = false;
-            this.statusButton.Location = new System.Drawing.Point(402, 16);
+            this.statusButton.Location = new System.Drawing.Point(385, 34);
             this.statusButton.Name = "statusButton";
             this.statusButton.Size = new System.Drawing.Size(75, 23);
             this.statusButton.TabIndex = 17;
@@ -347,16 +347,16 @@ namespace project1
             this.declineButton.UseVisualStyleBackColor = true;
             this.declineButton.Click += new System.EventHandler(this.RemoveEvent_Click);
             // 
-            // SaveProfielPicturebutton
+            // SaveProfilePicturebutton
             // 
-            this.SaveProfielPicturebutton.Enabled = false;
-            this.SaveProfielPicturebutton.Location = new System.Drawing.Point(38, 186);
-            this.SaveProfielPicturebutton.Name = "SaveProfielPicturebutton";
-            this.SaveProfielPicturebutton.Size = new System.Drawing.Size(75, 23);
-            this.SaveProfielPicturebutton.TabIndex = 0;
-            this.SaveProfielPicturebutton.Text = "Save image";
-            this.SaveProfielPicturebutton.UseVisualStyleBackColor = true;
-            this.SaveProfielPicturebutton.Click += new System.EventHandler(this.SaveProfielPictureButton_Click);
+            this.SaveProfilePicturebutton.Enabled = false;
+            this.SaveProfilePicturebutton.Location = new System.Drawing.Point(38, 186);
+            this.SaveProfilePicturebutton.Name = "SaveProfilePicturebutton";
+            this.SaveProfilePicturebutton.Size = new System.Drawing.Size(75, 23);
+            this.SaveProfilePicturebutton.TabIndex = 0;
+            this.SaveProfilePicturebutton.Text = "Save image";
+            this.SaveProfilePicturebutton.UseVisualStyleBackColor = true;
+            this.SaveProfilePicturebutton.Click += new System.EventHandler(this.SaveProfielPictureButton_Click);
             // 
             // checkedListBox1
             // 
@@ -439,7 +439,7 @@ namespace project1
             this.Controls.Add(this.birthdayButton);
             this.Controls.Add(this.pageButton);
             this.Controls.Add(this.FriendsButton);
-            this.Controls.Add(this.SaveProfielPicturebutton);
+            this.Controls.Add(this.SaveProfilePicturebutton);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.label1);
@@ -501,7 +501,7 @@ namespace project1
         private System.Windows.Forms.Button declineButton;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button SaveProfielPicturebutton;
+        private System.Windows.Forms.Button SaveProfilePicturebutton;
         internal System.Windows.Forms.LinkLabel ShowRandomPhotolinkLabel;
         internal System.Windows.Forms.PictureBox RandomPhotoPictureBox;
     }
