@@ -172,6 +172,7 @@ namespace project1
             // 
             // ProfilePicture
             // 
+            this.ProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ProfilePicture.Location = new System.Drawing.Point(22, 60);
             this.ProfilePicture.Name = "ProfilePicture";
             this.ProfilePicture.Size = new System.Drawing.Size(117, 120);
@@ -219,7 +220,7 @@ namespace project1
             // 
             // FriendByStatusPictureBox
             // 
-            this.FriendByStatusPictureBox.Location = new System.Drawing.Point(848, 303);
+            this.FriendByStatusPictureBox.Location = new System.Drawing.Point(848, 342);
             this.FriendByStatusPictureBox.Name = "FriendByStatusPictureBox";
             this.FriendByStatusPictureBox.Size = new System.Drawing.Size(113, 112);
             this.FriendByStatusPictureBox.TabIndex = 18;
@@ -380,7 +381,7 @@ namespace project1
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(218, 109);
             this.checkedListBox1.TabIndex = 33;
-            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.CheckedListBox1_SelectedIndexChanged);
             // 
             // Label1
             // 
@@ -408,9 +409,10 @@ namespace project1
             // 
             // RandomPhotoPictureBox
             // 
+            this.RandomPhotoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.RandomPhotoPictureBox.Location = new System.Drawing.Point(853, 144);
             this.RandomPhotoPictureBox.Name = "RandomPhotoPictureBox";
-            this.RandomPhotoPictureBox.Size = new System.Drawing.Size(113, 112);
+            this.RandomPhotoPictureBox.Size = new System.Drawing.Size(138, 131);
             this.RandomPhotoPictureBox.TabIndex = 36;
             this.RandomPhotoPictureBox.TabStop = false;
             this.RandomPhotoPictureBox.Click += new System.EventHandler(this.RandomPhotoPictureBox_Click);
@@ -425,7 +427,7 @@ namespace project1
             this.ChangeStatebutton.Text = "Stop";
             this.ChangeStatebutton.UseVisualStyleBackColor = true;
             this.ChangeStatebutton.Visible = false;
-            this.ChangeStatebutton.Click += new System.EventHandler(this.button1_Click);
+            this.ChangeStatebutton.Click += new System.EventHandler(this.Button1_Click);
             // 
             // UpdateFriendButton
             // 
@@ -455,7 +457,7 @@ namespace project1
             this.label2.Size = new System.Drawing.Size(204, 13);
             this.label2.TabIndex = 40;
             this.label2.Text = "Send a message to your important friends:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // SendButton
             // 

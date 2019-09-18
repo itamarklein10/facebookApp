@@ -25,7 +25,7 @@ namespace project1
             {
                 foreach (Photo photo in album.Photos)
                 {
-                    yield return photo.PictureThumbURL;
+                    yield return photo.PictureNormalURL;
                 }
             }
         }

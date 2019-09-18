@@ -12,7 +12,8 @@ namespace project1
     public partial class FormFacebook : Form
     {
         public User m_LoggedInUser { get; set; }
-        private NotifyFriends m_NotifyImportantFriends=new NotifyFriends();
+
+        private NotifyFriends m_NotifyImportantFriends = new NotifyFriends();
         public IEnumerator<string> m_PhotoUrlEnumerator;
         private System.Windows.Forms.Timer timer1;
 
@@ -163,7 +164,6 @@ namespace project1
                     SendButton.Enabled = true;
                     MessageTextBox.Enabled = true;
                     StatusTextBox.Enabled = true;
-
                 }));
             }).Start();
         }
@@ -380,7 +380,7 @@ namespace project1
             saveStrategy.SaveImage(ProfilePicture.Image, dlg.FileName);
         }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void CheckedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (checkedListBox1.CheckedItems.Count != 0)
             {
@@ -431,9 +431,9 @@ namespace project1
         {
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            if(ChangeStatebutton.Text == "Continue")
+            if (ChangeStatebutton.Text == "Continue")
             {
                 timer1.Start();
                 ChangeStatebutton.Text = "Stop";
@@ -453,25 +453,22 @@ namespace project1
                 m_NotifyImportantFriends.m_MessageFollowersDelegates += (string Message) => selected.PostStatus(Message);
             }
         }
-        private void label2_Click(object sender, EventArgs e)
-        {
 
+        private void Label2_Click(object sender, EventArgs e)
+        {
         }
 
         private void SendButton_Click(object sender, EventArgs e)
         {
-
             m_NotifyImportantFriends.NotifyAll(MessageTextBox.Text);
         }
 
         private void MessageTextBox_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void Label1_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

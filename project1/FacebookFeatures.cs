@@ -89,7 +89,7 @@ namespace project1
             }
         }
 
-        public static void StatusPost(FormFacebook i_FacebookForm,User i_LoggedInUser,TextBox i_StatusTextBox)
+        public static void StatusPost(FormFacebook i_FacebookForm, User i_LoggedInUser, TextBox i_StatusTextBox)
         {
             try
             {
