@@ -152,6 +152,7 @@ namespace project1
                     statusButton.Enabled = true;
                     showFriendByStatusLinkedLabel.Enabled = true;
                     ShowRandomPhotolinkLabel.Enabled = true;
+                    SaveProfielPicturebutton.Enabled = true;
                 }));
             }).Start();
         }
