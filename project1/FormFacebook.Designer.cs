@@ -427,7 +427,7 @@ namespace project1
             this.ChangeStatebutton.Text = "Stop";
             this.ChangeStatebutton.UseVisualStyleBackColor = true;
             this.ChangeStatebutton.Visible = false;
-            this.ChangeStatebutton.Click += new System.EventHandler(this.Button1_Click);
+            this.ChangeStatebutton.Click += new System.EventHandler(this.ChangeStatebutton_Click);
             // 
             // UpdateFriendButton
             // 

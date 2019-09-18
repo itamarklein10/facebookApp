@@ -431,7 +431,7 @@ namespace project1
         {
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void ChangeStatebutton_Click(object sender, EventArgs e)
         {
             if (ChangeStatebutton.Text == "Continue")
             {
@@ -447,10 +447,17 @@ namespace project1
 
         private void UpdadeFriendButton_Click(object sender, EventArgs e)
         {
-            if (FriendsListBox.SelectedItems.Count == 1)
+            try
             {
-                User selected = FriendsListBox.SelectedItem as User;
-                m_NotifyImportantFriends.m_MessageFollowersDelegates += (string Message) => selected.PostStatus(Message);
+                if (FriendsListBox.SelectedItems.Count == 1)
+                {
+                    User selected = FriendsListBox.SelectedItem as User;
+                    m_NotifyImportantFriends.m_MessageFollowersDelegates += (string Message) => selected.PostStatus(Message);
+                }
+            }
+            catch(Facebook.FacebookOAuthException)
+            {
+                MessageBox.Show("Feature unavailable because of facebook");
             }
         }
 
