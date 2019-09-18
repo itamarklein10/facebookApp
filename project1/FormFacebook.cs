@@ -418,5 +418,10 @@ namespace project1
         private void RandomPhotoPictureBox_Click(object sender, EventArgs e)
         {
         }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
