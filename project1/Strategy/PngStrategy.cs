@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using FacebookWrapper;
-using System.Drawing;
+﻿using System.Drawing;
 
 namespace project1.Strategy
 {
@@ -15,4 +10,3 @@ namespace project1.Strategy
         }
     }
     }
-
